@@ -41,10 +41,12 @@ export function runIntro() {
   return new Promise((res) => setTimeout(() => { intro.classList.add('is-done'); res(); }, 1300));
 }
 
+const setLabel = (el, text) => { if (el) el.innerHTML = `<span class="cl-w">${[...text].map((ch, i) => `<span class="cl" style="--ci:${i}">${ch === '<' ? '&lt;' : ch === '&' ? '&amp;' : ch}</span>`).join('')}</span>`; };
+
 export function initTransitions() {
   const label = document.querySelector('.curtain__label');
   if (html.classList.contains('is-arriving')) {
-    if (label) label.textContent = html.dataset.arriving || '';
+    setLabel(label, html.dataset.arriving || '');
     requestAnimationFrame(() => requestAnimationFrame(() => { html.classList.add('is-arrived'); html.classList.remove('is-arriving'); }));
     setTimeout(() => html.classList.remove('is-arrived'), 1600);
   }
@@ -58,11 +60,11 @@ export function initTransitions() {
     if (url.pathname === location.pathname) return; // same page / anchors
     e.preventDefault();
     const name = LABELS[fileOf(url.pathname)] || 'Rainmaker';
-    if (label) label.textContent = name;
+    setLabel(label, name);
     try { sessionStorage.setItem('rm-to', name); } catch {}
     html.classList.remove('is-arrived');
     html.classList.add('is-leaving');
-    setTimeout(() => { location.href = url.href; }, 760);
+    setTimeout(() => { location.href = url.href; }, 860);
   });
   addEventListener('pageshow', (e) => { if (e.persisted) html.classList.remove('is-leaving', 'is-arriving'); });
 }
@@ -73,9 +75,13 @@ export function initCursor() {
   if (!c) return;
   html.classList.add('has-cursor');
   const lab = c.querySelector('.cursor__label');
+  const dot = document.createElement('i'); dot.className = 'cursor-dot'; dot.setAttribute('aria-hidden', 'true'); document.body.appendChild(dot);
   let x = innerWidth / 2, y = innerHeight / 2, cx = x, cy = y;
-  addEventListener('pointermove', (e) => { x = e.clientX; y = e.clientY; }, { passive: true });
-  const loop = () => { cx += (x - cx) * 0.2; cy += (y - cy) * 0.2; c.style.transform = `translate3d(${cx}px, ${cy}px, 0)`; requestAnimationFrame(loop); };
+  addEventListener('pointermove', (e) => { x = e.clientX; y = e.clientY; dot.style.transform = `translate3d(${x}px, ${y}px, 0)`; c.classList.remove('is-out'); dot.classList.remove('is-out'); }, { passive: true });
+  document.documentElement.addEventListener('pointerleave', () => { c.classList.add('is-out'); dot.classList.add('is-out'); });
+  addEventListener('pointerdown', () => c.classList.add('is-down'));
+  addEventListener('pointerup', () => c.classList.remove('is-down'));
+  const loop = () => { cx += (x - cx) * 0.16; cy += (y - cy) * 0.16; c.style.transform = `translate3d(${cx}px, ${cy}px, 0)`; requestAnimationFrame(loop); };
   loop();
   document.addEventListener('pointerover', (e) => {
     const t = e.target.closest('a, button, [data-cursor], summary, label');
@@ -83,6 +89,7 @@ export function initCursor() {
     c.classList.toggle('is-hover', !!t);
     c.classList.toggle('has-label', !!l);
     lab.textContent = l || '';
+    dot.classList.toggle('is-hidden', !!l);
   });
 }
 

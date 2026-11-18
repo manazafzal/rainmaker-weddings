@@ -35,7 +35,7 @@
     var home = /\/(index\.html)?$/.test(location.pathname);
     if (!home || sessionStorage.getItem('rm-intro') || matchMedia('(prefers-reduced-motion: reduce)').matches) d.classList.add('no-intro');
     var to = sessionStorage.getItem('rm-to');
-    if (to) { d.classList.add('is-arriving'); d.dataset.arriving = to; sessionStorage.removeItem('rm-to'); }
+    if (to) { d.classList.add('is-arriving'); d.dataset.arriving = to; sessionStorage.removeItem('rm-to'); setTimeout(function () { d.classList.remove('is-arriving'); }, 2600); }
   } catch (e) {}
 </script>
 <!-- @render schema path="{{path}}" title="{{title}}" -->

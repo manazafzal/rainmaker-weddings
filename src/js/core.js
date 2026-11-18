@@ -62,13 +62,14 @@ export function splitWords(el) {
 export function initReveals() {
   const splits = document.querySelectorAll('[data-split]');
   splits.forEach(splitWords);
+  document.querySelectorAll('.tcard, .pcard, .craft, .film, .work, .post, .moment, .step').forEach((el) => { if (!el.hasAttribute('data-reveal')) el.setAttribute('data-reveal', ''); });
   const els = document.querySelectorAll('[data-split], [data-reveal], [data-img-reveal], [data-draw], .vision__art');
   if (reduced || !('IntersectionObserver' in window)) { els.forEach((e) => e.classList.add('is-in')); return; }
   // stagger siblings that reveal together
   document.querySelectorAll('[data-reveal]').forEach((el) => {
     const sib = [...el.parentElement.children].filter((c) => c.hasAttribute('data-reveal'));
     const k = sib.indexOf(el);
-    if (k > 0) el.style.setProperty('--rd', `${Math.min(k, 5) * 0.09}s`);
+    if (k > 0) el.style.setProperty('--rd', `${(k % 6) * 0.09}s`);
   });
   const io = new IntersectionObserver(
     (entries) => entries.forEach((en) => { if (en.isIntersecting) { en.target.classList.add('is-in'); io.unobserve(en.target); } }),
@@ -117,4 +118,27 @@ export function initDrawScroll() {
   };
   addEventListener('scroll', set, { passive: true });
   set();
+}
+
+/** Image parallax: photos drift slowly inside their frames (desktop only; uses the
+ * independent `translate` property so reveal transforms are untouched). */
+export function initImageParallax() {
+  if (reduced) return;
+  const desk = matchMedia('(min-width: 901px)');
+  const imgs = [...document.querySelectorAll('.ed__frame img, .about__fig .frame img, .vision__art .frame img, .step__media .frame img, .phero__media img, .reel__media img')];
+  imgs.forEach((im) => { if (!im.closest('.phero__media, .reel__media')) im.classList.add('pimg'); });
+  let ticking = false;
+  const update = () => {
+    ticking = false;
+    const vh = innerHeight;
+    imgs.forEach((im) => {
+      if (!desk.matches) { im.style.translate = ''; return; }
+      const r = im.parentElement.getBoundingClientRect();
+      if (r.bottom < -100 || r.top > vh + 100) return;
+      const p = (r.top + r.height / 2 - vh / 2) / (vh / 2 + r.height / 2);
+      im.style.translate = `0 ${(p * r.height * 0.05).toFixed(1)}px`;
+    });
+  };
+  const req = () => { if (!ticking) { ticking = true; requestAnimationFrame(update); } };
+  addEventListener('scroll', req, { passive: true }); addEventListener('resize', req); update();
 }

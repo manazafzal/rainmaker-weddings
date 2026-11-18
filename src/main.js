@@ -2,7 +2,7 @@
  * Rainmaker Weddings — entry point (every page).
  */
 import gsap from 'gsap';
-import { initSmoothScroll, initReveals, initParallax, initDrawScroll, reduced } from './js/core.js';
+import { initSmoothScroll, initReveals, initParallax, initImageParallax, initDrawScroll, reduced } from './js/core.js';
 import { initHeader, initMenu, runIntro, initTransitions, initCursor, initMagnetic } from './js/chrome.js';
 import { initRainHero } from './js/rain.js';
 import { initWorlds, initCrafts } from './js/hover.js';
@@ -22,6 +22,7 @@ initRainHero();
 initWorlds();
 initCrafts();
 initParallax();
+initImageParallax();
 initDrawScroll();
 runIntro().then(initReveals);
 initDistort({ reduced, gsap });

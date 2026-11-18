@@ -184,7 +184,7 @@ export function themeCards(_, { readJSON }) {
       (t) => `
     <li class="tcard" id="theme-${t.id}" style="${themeVars(t)}">
       <article class="tcard__in">
-        <div class="tcard__media" data-distort>
+        <div class="tcard__media" data-distort data-cursor="View">
           ${img({ src: t.images[0].src, alt: `${t.name} themed ${t.kind.toLowerCase()} designed by Rainmaker Weddings`, w: t.images[0].w, h: t.images[0].h })}
           ${t.images[1] ? img({ src: t.images[1].src, alt: '', w: t.images[1].w, h: t.images[1].h, cls: 'tcard__alt' }) : ''}
         </div>

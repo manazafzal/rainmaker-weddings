@@ -16,22 +16,7 @@ export function initMedia() {
     if (b) { e.preventDefault(); openVideo(b.dataset.youtube || b.dataset.youtubeModal); }
   });
 
-  const lb = document.querySelector('[data-lightbox-modal]');
-  const items = [...document.querySelectorAll('[data-lightbox]')];
-  let idx = 0;
-  const show = (i) => {
-    idx = (i + items.length) % items.length;
-    const it = items[idx];
-    const img = lb.querySelector('.lightbox__img');
-    img.src = it.dataset.full;
-    img.alt = it.querySelector('img')?.alt || '';
-    lb.querySelector('.lightbox__cap').textContent = it.dataset.caption || '';
-    img.animate?.([{ opacity: 0, transform: 'scale(.97)' }, { opacity: 1, transform: 'none' }], { duration: reduced ? 1 : 600, easing: 'cubic-bezier(.16,1,.3,1)' });
-  };
-  items.forEach((it, i) => it.addEventListener('click', () => { show(i); lb.showModal(); lenis?.stop(); }));
-  lb?.querySelector('[data-lb-prev]')?.addEventListener('click', () => show(idx - 1));
-  lb?.querySelector('[data-lb-next]')?.addEventListener('click', () => show(idx + 1));
-  lb?.addEventListener('keydown', (e) => { if (e.key === 'ArrowLeft') show(idx - 1); if (e.key === 'ArrowRight') show(idx + 1); });
+  initLightbox();
 
   document.querySelectorAll('dialog').forEach((d) => {
     d.addEventListener('close', () => { if (d === vm) frame.innerHTML = ''; lenis?.start(); });
@@ -113,4 +98,64 @@ export function initFilters() {
       if (on && !reduced) w.animate?.([{ opacity: 0, transform: 'translateY(30px)' }, { opacity: 1, transform: 'none' }], { duration: 700, easing: 'cubic-bezier(.16,1,.3,1)' });
     });
   }));
+}
+
+/* ---------- Swipeable lightbox: one gallery at a time (a theme card's photos, or the page's grid) ---------- */
+function initLightbox() {
+  const lb = document.querySelector('[data-lightbox-modal]');
+  const items = [...document.querySelectorAll('[data-lightbox]')];
+  if (!lb || !items.length) return;
+  const stage = lb.querySelector('.lb__stage'), track = lb.querySelector('.lb__track');
+  const cap = lb.querySelector('.lightbox__cap'), dots = lb.querySelector('.lb__dots');
+  let group = [], idx = 0, slides = [];
+  const esc = (t) => t.replace(/[&<>"]/g, (c) => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;' })[c]);
+  const load = (i) => { const im = slides[i]?.querySelector('img'); if (im && !im.getAttribute('src')) im.src = im.dataset.src; };
+  const go = (i, wrap = true) => {
+    const n = group.length;
+    idx = wrap ? (i + n) % n : Math.max(0, Math.min(n - 1, i));
+    track.style.transform = `translate3d(${-idx * 100}%, 0, 0)`;
+    slides.forEach((s, k) => { s.classList.toggle('is-current', k === idx); s.setAttribute('aria-hidden', String(k !== idx)); });
+    [idx, idx + 1, idx - 1].forEach((k) => load((k + n) % n));
+    cap.textContent = group[idx].dataset.caption || '';
+    [...dots.children].forEach((d, k) => d.classList.toggle('is-on', k === idx));
+    lb.querySelectorAll('.lightbox__nav').forEach((b) => (b.hidden = n < 2));
+  };
+  const open = (it) => {
+    const card = it.closest('.tcard');
+    group = card ? [...card.querySelectorAll('[data-lightbox]')] : items.filter((x) => !x.closest('.tcard') && (x === it || x.offsetParent !== null));
+    track.classList.add('is-drag');
+    track.innerHTML = group.map((x) => `<figure class="lb__slide" role="group" aria-roledescription="slide"><img data-src="${esc(x.dataset.full)}" alt="${esc(x.querySelector('img')?.alt || x.dataset.caption || '')}" draggable="false" decoding="async"></figure>`).join('');
+    slides = [...track.children];
+    dots.innerHTML = group.length > 1 && group.length <= 14 ? group.map(() => '<i></i>').join('') : '';
+    go(group.indexOf(it));
+    lb.showModal(); lenis?.stop();
+    requestAnimationFrame(() => requestAnimationFrame(() => track.classList.remove('is-drag')));
+  };
+  items.forEach((it) => it.addEventListener('click', () => open(it)));
+  document.querySelectorAll('.tcard__media').forEach((m) => m.addEventListener('click', () => m.closest('.tcard')?.querySelector('[data-lightbox]')?.click()));
+  lb.querySelector('[data-lb-prev]').addEventListener('click', () => go(idx - 1));
+  lb.querySelector('[data-lb-next]').addEventListener('click', () => go(idx + 1));
+  lb.addEventListener('keydown', (e) => { if (e.key === 'ArrowLeft') go(idx - 1); if (e.key === 'ArrowRight') go(idx + 1); });
+  // swipe / drag: follows the finger, rubber-bands at the ends, flicks by velocity
+  let sx = 0, sy = 0, dx = 0, t0 = 0, drag = false, axis = '';
+  stage.addEventListener('pointerdown', (e) => { if (e.button !== 0 || group.length < 2) return; drag = true; axis = ''; sx = e.clientX; sy = e.clientY; dx = 0; t0 = performance.now(); });
+  stage.addEventListener('pointermove', (e) => {
+    if (!drag) return;
+    dx = e.clientX - sx; const dy = e.clientY - sy;
+    if (!axis && Math.hypot(dx, dy) > 8) { axis = Math.abs(dx) > Math.abs(dy) ? 'x' : 'y'; if (axis === 'x') { stage.setPointerCapture(e.pointerId); track.classList.add('is-drag'); } }
+    if (axis !== 'x') return;
+    const edge = (idx === 0 && dx > 0) || (idx === group.length - 1 && dx < 0);
+    track.style.transform = `translate3d(calc(${-idx * 100}% + ${edge ? dx * 0.35 : dx}px), 0, 0)`;
+  });
+  const end = () => {
+    if (!drag) return; drag = false;
+    track.classList.remove('is-drag');
+    if (axis !== 'x') return;
+    const v = Math.abs(dx) / Math.max(1, performance.now() - t0);
+    const far = Math.abs(dx) > stage.clientWidth * 0.18 || (v > 0.45 && Math.abs(dx) > 30);
+    go(far ? idx + (dx < 0 ? 1 : -1) : idx, false);
+    axis = 'x-done';
+  };
+  stage.addEventListener('pointerup', end); stage.addEventListener('pointercancel', end);
+  stage.addEventListener('click', (e) => { if (axis === 'x-done') { axis = ''; return; } if (!e.target.closest('img')) lb.close(); });
 }

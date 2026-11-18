@@ -65,7 +65,7 @@ jobs:
       - name: Build for the /<repo>/ sub-path
         # PREVIEW_NOINDEX keeps this GitHub Pages preview out of search engines
         # (noindex meta on every page + Disallow-all robots.txt). Production builds omit it.
-        run: BASE_PATH="/${GITHUB_REPOSITORY#*/}/" PREVIEW_NOINDEX=1 npm run build
+        run: BASE_PATH="/${GITHUB_REPOSITORY#*/}/" SITE_URL="https://${GITHUB_REPOSITORY_OWNER}.github.io/${GITHUB_REPOSITORY#*/}" PREVIEW_NOINDEX=1 npm run build
 
       - run: touch dist/.nojekyll
 

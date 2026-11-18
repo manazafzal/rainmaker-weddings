@@ -1,0 +1,53 @@
+{
+  "/assets/img/gallery/mathew-pooja-3.webp": {
+    "tint": "#d2e4db",
+    "deep": "#185f60",
+    "p": [
+      "#43b8b9",
+      "#0e524b",
+      "#3f673c",
+      "#c9caae"
+    ]
+  },
+  "/assets/img/themes/crazy-rich-asians-1.webp": {
+    "tint": "#ebcfc2",
+    "deep": "#913224",
+    "p": [
+      "#bf4e3e",
+      "#6d4a26"
+    ]
+  },
+  "/assets/img/decor/04-2.webp": {
+    "tint": "#ecd8c0",
+    "deep": "#7d4d1f",
+    "p": [
+      "#c27b36",
+      "#611509"
+    ]
+  },
+  "/assets/img/themes/atlantis-3.webp": {
+    "tint": "#c7d2d2",
+    "deep": "#09537b",
+    "p": [
+      "#0a608e"
+    ]
+  },
+  "/assets/img/themes/bali-ahoy-1.webp": {
+    "tint": "#c6d4d7",
+    "deep": "#03548b",
+    "p": [
+      "#0466a9",
+      "#73b0d3"
+    ]
+  },
+  "/assets/img/themes/cyberpunk-2.webp": {
+    "tint": "#e7c0be",
+    "deep": "#960226",
+    "p": [
+      "#aa022b",
+      "#83016e",
+      "#230d75",
+      "#debc55"
+    ]
+  }
+}

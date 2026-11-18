@@ -1,3 +1,4 @@
+import { readFileSync } from 'node:fs';
 /**
  * Build-time renderers. Each export receives (attrs, { readJSON, site }) and returns HTML.
  * Content lives in /src/content/*.json — edit the JSON, not this file, to change copy.
@@ -13,7 +14,10 @@ const img = ({ src, alt = '', w, h, cls = '', eager = false, sizes = '' }) =>
   } decoding="async"${sizes ? ` sizes="${sizes}"` : ''}>`;
 
 const ext = 'target="_blank" rel="noopener"';
-const themeVars = (t) => `--t-bg:${t.bg};--t-accent:${t.accent};--t-ink:${t.ink}`;
+const themeVars = (t) => `--t-bg:${t.bg};--t-accent:${t.accent};--t-ink:${t.ink};--t-shape:${t.shape || t.accent}`;
+const flood = (t) => `data-flood="${t.bg}" data-flood-fg="${t.ink}" data-flood-acc="${t.accent}"`;
+const swatches = (t) => `<ul class="swatches" aria-hidden="true">${(t.palette || []).map((c, i) => `<li style="--sw:${c};--i:${i}"></li>`).join('')}</ul>`;
+const HP = JSON.parse(readFileSync(new URL('../src/content/hero-palettes.json', import.meta.url), 'utf8'));
 const themes = (readJSON) => readJSON('src/content/themes.json').themes;
 const slug = (s) => s.toLowerCase().replace(/&/g, 'and').replace(/[^a-z0-9]+/g, '-').replace(/(^-|-$)/g, '');
 
@@ -81,7 +85,7 @@ const HERO = [
 export function heroSlides() {
   return HERO.map(
     (s, i) =>
-      `<img class="hero__slide${i === 0 ? ' is-active' : ''}" src="${s.src}" alt="${i === 0 ? esc(s.alt) : ''}" width="${s.w}" height="${s.h}" data-label="${esc(s.label)}" ${
+      `<img class="hero__slide${i === 0 ? ' is-active' : ''}" src="${s.src}" alt="${i === 0 ? esc(s.alt) : ''}" width="${s.w}" height="${s.h}" data-label="${esc(s.label)}" data-tint="${HP[s.src]?.tint || ''}" data-deep="${HP[s.src]?.deep || ''}" data-p="${(HP[s.src]?.p || []).join(',')}" ${
         i === 0 ? 'fetchpriority="high"' : 'loading="eager" fetchpriority="low"'
       } decoding="async" sizes="100vw">`
   ).join('');
@@ -115,7 +119,7 @@ export function featureWorld({ id, cta = 'experiences' }, { readJSON }) {
   const href = cta === 'enquire' ? '/enquire.html' : `/experiences.html#theme-${id}`;
   const label = cta === 'enquire' ? 'Plan a world like this' : `Step into ${t.name}`;
   return `
-  <section class="feature feature--${id}" id="feature-${id}" aria-labelledby="feature-${id}-title" style="${themeVars(t)}" data-cursor-tone="light">
+  <section class="feature feature--${id}" id="feature-${id}" aria-labelledby="feature-${id}-title" style="${themeVars(t)}" ${flood(t)}>
     ${id === 'starry-night' ? '<div class="sky" aria-hidden="true"><i class="sky__stars"></i><i class="sky__stars sky__stars--b"></i><i class="sky__swirl"></i><i class="sky__swirl sky__swirl--b"></i><i class="sky__moon"></i></div>' : '<div class="feature__glow" aria-hidden="true"></div>'}
     <div class="ed">
       <figure class="ed__lead"><div class="ed__frame" data-img-reveal data-distort>${img({ ...a, eager: false })}</div></figure>
@@ -124,6 +128,7 @@ export function featureWorld({ id, cta = 'experiences' }, { readJSON }) {
         <h2 class="feature__title" id="feature-${id}-title" data-split>${f.title}</h2>
         <p class="feature__desc" data-reveal>${esc(t.desc)}</p>
         <p class="feature__cta" data-reveal><a class="btn btn--line" href="${href}" data-cursor="Enter"><span>${label}</span><i class="btn__arrow" aria-hidden="true"></i></a></p>
+        ${swatches(t)}
         <div class="ed__pair">
           <figure class="ed__small"><div class="frame" data-img-reveal data-distort>${img({ ...b })}</div></figure>
           <figure class="ed__small"><div class="frame" data-img-reveal data-distort>${img({ ...c })}</div></figure>
@@ -156,7 +161,7 @@ export function portfolioColumns(_, { readJSON }) {
     .map(
       (col, ci) => `<ul class="pcols__col" data-speed="${speeds[ci]}">${col
         .map(
-          (x) => `<li class="pcard"><a class="pcard__link" href="/portfolio.html" data-cursor="View"><div class="frame pcard__frame" data-img-reveal data-distort>${img({ src: x.image, alt: x.alt, w: x.width, h: x.height })}</div><p class="pcard__title">${esc(x.title)}</p><p class="pcard__tag">${esc(x.hashtag)}</p></a></li>`
+          (x) => `<li class="pcard"><a class="pcard__link" href="/portfolio.html" data-cursor="View"><div class="frame pcard__frame" data-img-reveal data-distort data-spot>${img({ src: x.image, alt: x.alt, w: x.width, h: x.height })}</div><p class="pcard__title">${esc(x.title)}</p><p class="pcard__tag">${esc(x.hashtag)}</p></a></li>`
         )
         .join('')}</ul>`
     )
@@ -182,15 +187,16 @@ export function themeCards(_, { readJSON }) {
   return themes(readJSON)
     .map(
       (t) => `
-    <li class="tcard" id="theme-${t.id}" style="${themeVars(t)}">
+    <li class="tcard" id="theme-${t.id}" style="${themeVars(t)}" ${flood(t)}>
       <article class="tcard__in">
-        <div class="tcard__media" data-distort data-cursor="View">
+        <div class="tcard__media" data-distort data-spot data-cursor="View">
           ${img({ src: t.images[0].src, alt: `${t.name} themed ${t.kind.toLowerCase()} designed by Rainmaker Weddings`, w: t.images[0].w, h: t.images[0].h })}
           ${t.images[1] ? img({ src: t.images[1].src, alt: '', w: t.images[1].w, h: t.images[1].h, cls: 'tcard__alt' }) : ''}
         </div>
         <div class="tcard__body">
           <p class="tcard__kind">${esc(t.kind)}${t.for ? ` · ${esc(t.for.replace(/^An? [^·]*·\s*/, ''))}` : ''}</p>
           <h3 class="tcard__name">${esc(t.name)}</h3>
+          ${swatches(t)}
           <p class="tcard__desc">${esc(t.desc)}</p>
           <div class="tcard__thumbs">${t.images.map((im) => `<button type="button" class="tcard__thumb" data-lightbox data-full="${im.src}" data-caption="${esc(t.name)}" aria-label="View a ${esc(t.name)} photo">${img({ src: im.src, alt: '', w: im.w, h: im.h })}</button>`).join('')}</div>
         </div>

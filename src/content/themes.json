@@ -6,9 +6,9 @@
       "name": "Thrissur Pooram",
       "kind": "Wedding",
       "src": "instagram",
-      "bg": "#4a0b07",
-      "accent": "#f3b33d",
-      "ink": "#fff3dc",
+      "bg": "#f0952a",
+      "accent": "#711c0f",
+      "ink": "#1b1511",
       "desc": "What if the energy of Thrissur Pooram could unfold through an entire wedding? Muthukudas, a 21-piece Shinkari Melam, Kathakali and Mohiniyattam, a Ganga Aarti and a full Pooram procession — a wedding experienced like a Pooram.",
       "link": "https://www.instagram.com/rainmakerweddings/",
       "images": [
@@ -43,16 +43,23 @@
           "h": 1080
         }
       ],
-      "for": "A Kerala wedding · Hyatt Regency Thrissur"
+      "for": "A Kerala wedding · Hyatt Regency Thrissur",
+      "shape": "#d4351c",
+      "palette": [
+        "#f0952a",
+        "#d4351c",
+        "#c99a2e",
+        "#2f6b2a"
+      ]
     },
     {
       "id": "baroque-ball",
       "name": "Baroque Ball",
       "kind": "Reception",
       "src": "site",
-      "bg": "#0d2a21",
-      "accent": "#d9c58f",
-      "ink": "#f1efe4",
+      "bg": "#e9b8b5",
+      "accent": "#614a20",
+      "ink": "#1b1511",
       "desc": "Old-world charm and the opulence of a Baroque Ball — a fairytale evening and a symphony of grandeur.",
       "link": "https://rainmakerweddings.com/mathew-pooja/",
       "images": [
@@ -87,16 +94,23 @@
           "h": 487
         }
       ],
-      "for": "Mathew + Pooja · Grand Hyatt Kochi"
+      "for": "Mathew + Pooja · Grand Hyatt Kochi",
+      "shape": "#c9a35b",
+      "palette": [
+        "#e9b8b5",
+        "#c9a35b",
+        "#f6ece0",
+        "#9c4a5a"
+      ]
     },
     {
       "id": "cyberpunk",
       "name": "Cyberpunk",
       "kind": "Sangeet",
       "src": "instagram",
-      "bg": "#14021f",
-      "accent": "#ff2fb3",
-      "ink": "#f4e9ff",
+      "bg": "#b0126e",
+      "accent": "#61ebeb",
+      "ink": "#f6efe3",
       "desc": "Welcome to the fictional realm of Night City — neon katanas, a smashed neon champagne pyramid and an epic War of the DJ Lords.",
       "link": "https://www.instagram.com/rainmakerweddings/p/DGd4lZMI6lq/",
       "images": [
@@ -131,7 +145,14 @@
           "h": 545
         }
       ],
-      "for": "Jeeben + Sozy · Grand Hyatt Kochi Bolgatty"
+      "for": "Jeeben + Sozy · Grand Hyatt Kochi Bolgatty",
+      "shape": "#19c2c2",
+      "palette": [
+        "#b0126e",
+        "#19c2c2",
+        "#f04aa0",
+        "#3b1d6e"
+      ]
     },
     {
       "id": "mayalokah",
@@ -139,9 +160,9 @@
       "kind": "Folklore fantasy",
       "for": "Grand Hyatt Kochi",
       "src": "YouTube @Rainmakerweddingplanners",
-      "bg": "#1a0d06",
-      "accent": "#e0a43b",
-      "ink": "#fff1dc",
+      "bg": "#1b296d",
+      "accent": "#d38b7a",
+      "ink": "#f6efe3",
       "desc": "A Kerala folklore fantasy event — the myths and legends of Kerala, staged at Grand Hyatt Kochi.",
       "link": "https://www.youtube.com/watch?v=D5fyVsfxccc",
       "video": "D5fyVsfxccc",
@@ -161,6 +182,14 @@
           "w": 1280,
           "h": 720
         }
+      ],
+      "shape": "#a0503d",
+      "palette": [
+        "#1b296d",
+        "#a0503d",
+        "#7cb6d8",
+        "#e3b99b",
+        "#33183e"
       ]
     },
     {
@@ -168,9 +197,9 @@
       "name": "Atlantis",
       "kind": "Sangeet",
       "src": "site",
-      "bg": "#022b35",
-      "accent": "#5ee3d8",
-      "ink": "#e4fbff",
+      "bg": "#0a5e87",
+      "accent": "#b5d6e6",
+      "ink": "#f6efe3",
       "desc": "An underwater-themed Sangeet curated for a very special couple — #MalVint — at Leela Kovalam.",
       "link": "https://rainmakerweddings.com/malavika-vineeth/atlantis/",
       "images": [
@@ -206,7 +235,12 @@
         }
       ],
       "for": "Malavika + Vineeth · The Leela Kovalam",
-      "video": "01VZ9C0xPsY"
+      "video": "01VZ9C0xPsY",
+      "shape": "#8abcd4",
+      "palette": [
+        "#0b6b9a",
+        "#8abcd4"
+      ]
     },
     {
       "id": "interstellar",
@@ -214,9 +248,9 @@
       "kind": "Sangeet",
       "for": "Saheel + Rana",
       "src": "YouTube @Rainmakerweddingplanners",
-      "bg": "#050818",
-      "accent": "#9fb7ff",
-      "ink": "#eef2ff",
+      "bg": "#1c2f5f",
+      "accent": "#9d91dc",
+      "ink": "#f6efe3",
       "desc": "A spectacular Interstellar-themed Sangeet — a cosmic celebration under a ceiling of stars.",
       "link": "https://www.youtube.com/watch?v=-1Qygnjta84",
       "video": "-1Qygnjta84",
@@ -236,6 +270,12 @@
           "w": 1280,
           "h": 720
         }
+      ],
+      "shape": "#20184c",
+      "palette": [
+        "#253356",
+        "#20184c",
+        "#8582a7"
       ]
     },
     {
@@ -243,9 +283,9 @@
       "name": "Casablanca",
       "kind": "Mehendi",
       "src": "site",
-      "bg": "#3a1b10",
-      "accent": "#e8a96a",
-      "ink": "#fff0e2",
+      "bg": "#163b8c",
+      "accent": "#60bacf",
+      "ink": "#f6efe3",
       "desc": "Not just a Mehendi, but a journey through the mystique of Middle Eastern elegance — Arabian charm and luxurious detail.",
       "link": "https://rainmakerweddings.com/casablance-mehendi-rinad-faiz/",
       "images": [
@@ -281,7 +321,15 @@
         }
       ],
       "for": "Rinad + Faiz · Mangalore",
-      "video": "c9YfMTaT4W8"
+      "video": "c9YfMTaT4W8",
+      "shape": "#2c7f93",
+      "palette": [
+        "#163b8c",
+        "#2c7f93",
+        "#5a1e51",
+        "#5f3d84",
+        "#b98d98"
+      ]
     },
     {
       "id": "enchanted-forest",
@@ -289,9 +337,9 @@
       "kind": "Reception",
       "for": "Mehal + Deliya · Grand Hyatt Kochi Bolgatty",
       "src": "YouTube @Rainmakerweddingplanners",
-      "bg": "#04170d",
-      "accent": "#6dff9e",
-      "ink": "#ecfff2",
+      "bg": "#1b6226",
+      "accent": "#a8db94",
+      "ink": "#f6efe3",
       "desc": "An Enchanted Forest reception — Mehal and Deliya’s magical celebration at Grand Hyatt Kochi Bolgatty.",
       "link": "https://www.youtube.com/watch?v=Im9hAK166_A",
       "video": "Im9hAK166_A",
@@ -311,6 +359,13 @@
           "w": 1280,
           "h": 720
         }
+      ],
+      "shape": "#8fd077",
+      "palette": [
+        "#227a2f",
+        "#8fd077",
+        "#2e4d1f",
+        "#4f4721"
       ]
     },
     {
@@ -318,9 +373,9 @@
       "name": "Starry Night",
       "kind": "Corporate gala",
       "src": "site:bcg",
-      "bg": "#0c1a3f",
-      "accent": "#f2c84b",
-      "ink": "#eaf0ff",
+      "bg": "#1d3f9a",
+      "accent": "#f4c430",
+      "ink": "#f6efe3",
       "desc": "As night fell, The Leela Kovalam transformed into a Van Gogh-inspired “Starry Night” dreamscape — after a traditional Sadya welcome and a beachfront carnival.",
       "link": "https://rainmakerweddings.com/bcg/",
       "images": [
@@ -355,7 +410,14 @@
           "h": 960
         }
       ],
-      "for": "BCG South Gala 2025 · The Leela Kovalam"
+      "for": "BCG South Gala 2025 · The Leela Kovalam",
+      "shape": "#f4c430",
+      "palette": [
+        "#1d3f9a",
+        "#f4c430",
+        "#4f86d8",
+        "#f6e7a1"
+      ]
     },
     {
       "id": "animeverse",
@@ -363,9 +425,9 @@
       "kind": "Homecoming",
       "for": "Vedanth",
       "src": "YouTube @Rainmakerweddingplanners",
-      "bg": "#1b0b3a",
-      "accent": "#ffcf3a",
-      "ink": "#fff8e6",
+      "bg": "#dd8059",
+      "accent": "#392903",
+      "ink": "#1b1511",
       "desc": "Vedanth’s homecoming — an animeverse unleashed, with characters straight off the screen.",
       "link": "https://www.youtube.com/watch?v=DaXLs4YQsxY",
       "video": "DaXLs4YQsxY",
@@ -385,6 +447,12 @@
           "w": 1280,
           "h": 720
         }
+      ],
+      "shape": "#f6c959",
+      "palette": [
+        "#da7348",
+        "#f6c959",
+        "#5c2624"
       ]
     },
     {
@@ -392,9 +460,9 @@
       "name": "Noir",
       "kind": "Sangeet",
       "src": "site",
-      "bg": "#0a0a0a",
-      "accent": "#e6e6e6",
-      "ink": "#ffffff",
+      "bg": "#dba781",
+      "accent": "#503f16",
+      "ink": "#1b1511",
       "desc": "A striking black-and-white palette, shimmering fairy lights and the soft glow of candles — an evening of elegance and glamour.",
       "link": "https://rainmakerweddings.com/noir-sangeeth/",
       "images": [
@@ -429,7 +497,15 @@
           "h": 867
         }
       ],
-      "for": "Gayathry + Siddharth · Le Méridien"
+      "for": "Gayathry + Siddharth · Le Méridien",
+      "shape": "#806523",
+      "palette": [
+        "#dba781",
+        "#806523",
+        "#9ea675",
+        "#3b5542",
+        "#3d3432"
+      ]
     },
     {
       "id": "ashtalakshmi",
@@ -437,9 +513,9 @@
       "kind": "Wedding",
       "for": "A traditional South Indian wedding",
       "src": "YouTube @Rainmakerweddingplanners",
-      "bg": "#2a1405",
-      "accent": "#f0c14b",
-      "ink": "#fff5e0",
+      "bg": "#923822",
+      "accent": "#e2c9a2",
+      "ink": "#f6efe3",
       "desc": "A divine Ashtalakshmi-inspired wedding — a traditional South Indian ceremony on a grand Kerala mandap.",
       "link": "https://www.youtube.com/watch?v=FjuYl_zQ48c",
       "video": "FjuYl_zQ48c",
@@ -474,6 +550,11 @@
           "w": 1000,
           "h": 1500
         }
+      ],
+      "shape": "#ddc092",
+      "palette": [
+        "#bb482c",
+        "#ddc092"
       ]
     },
     {
@@ -481,9 +562,9 @@
       "name": "Crazy Rich Asians",
       "kind": "Celebration",
       "src": "site",
-      "bg": "#3d0707",
-      "accent": "#ecbd4a",
-      "ink": "#fff4e0",
+      "bg": "#70221a",
+      "accent": "#d0a073",
+      "ink": "#f6efe3",
       "desc": "A realm of perpetual grandeur, where every step follows a runway and every moment curates a masterpiece.",
       "link": "https://rainmakerweddings.com/jacob-and-treesa/crazy-rich-asians/",
       "images": [
@@ -518,7 +599,13 @@
           "h": 960
         }
       ],
-      "for": "Jacob + Treesa"
+      "for": "Jacob + Treesa",
+      "shape": "#ad7745",
+      "palette": [
+        "#70221a",
+        "#ad7745",
+        "#473728"
+      ]
     },
     {
       "id": "encanto",
@@ -526,9 +613,9 @@
       "kind": "Mehendi",
       "for": "A Rainmaker Mehendi",
       "src": "YouTube @Rainmakerweddingplanners",
-      "bg": "#2b0d1e",
-      "accent": "#ffb02e",
-      "ink": "#fff3e6",
+      "bg": "#a1292e",
+      "accent": "#e7ccb8",
+      "ink": "#f6efe3",
       "desc": "An Encanto-themed Mehendi — a magical celebration of colour, flowers and dance.",
       "link": "https://www.youtube.com/watch?v=vkhEAxFlo6E",
       "video": "vkhEAxFlo6E",
@@ -563,6 +650,12 @@
           "w": 1440,
           "h": 960
         }
+      ],
+      "shape": "#7e4f2c",
+      "palette": [
+        "#a1292e",
+        "#7e4f2c",
+        "#da9e72"
       ]
     },
     {
@@ -570,9 +663,9 @@
       "name": "Santorini",
       "kind": "1st birthday",
       "src": "site",
-      "bg": "#0d2c52",
-      "accent": "#ffffff",
-      "ink": "#eef6ff",
+      "bg": "#713c11",
+      "accent": "#e1b58b",
+      "ink": "#f6efe3",
       "desc": "3D-mapped pathways, blue-and-white tablescapes, a Santorini bar and a live orchestration led by M. Jayachandran.",
       "link": "https://rainmakerweddings.com/rihaans-birthday/",
       "images": [
@@ -607,7 +700,14 @@
           "h": 960
         }
       ],
-      "for": "Rivaan · The Leela Raviz Kovalam"
+      "for": "Rivaan · The Leela Raviz Kovalam",
+      "shape": "#ddab7b",
+      "palette": [
+        "#713c11",
+        "#ddab7b",
+        "#3e2a2b",
+        "#3c3d41"
+      ]
     },
     {
       "id": "jazz-age",
@@ -615,9 +715,9 @@
       "kind": "Cocktail night",
       "for": "Pooja + Nihal",
       "src": "YouTube @Rainmakerweddingplanners",
-      "bg": "#1a1208",
-      "accent": "#e3b25b",
-      "ink": "#fff6e4",
+      "bg": "#92341b",
+      "accent": "#ecc5a3",
+      "ink": "#f6efe3",
       "desc": "A grand finale in style — Pooja and Nihal’s Jazz Age cocktail night, saxophone and all.",
       "link": "https://www.youtube.com/watch?v=ZEElDEDrO1U",
       "video": "ZEElDEDrO1U",
@@ -637,6 +737,11 @@
           "w": 1280,
           "h": 720
         }
+      ],
+      "shape": "#e09f68",
+      "palette": [
+        "#92341b",
+        "#e09f68"
       ]
     },
     {
@@ -644,9 +749,9 @@
       "name": "Alice in Wonderland",
       "kind": "Baby shower",
       "src": "site",
-      "bg": "#173b38",
-      "accent": "#f6a8c4",
-      "ink": "#f2fffb",
+      "bg": "#cb884e",
+      "accent": "#242b0e",
+      "ink": "#1b1511",
       "desc": "The Chronosphere, the Mad Hatter’s party table, toadstool mushrooms and an Unbirthday Cake — with living characters bringing the story to life.",
       "link": "https://rainmakerweddings.com/alice-in-wonderland/",
       "images": [
@@ -681,7 +786,14 @@
           "h": 487
         }
       ],
-      "for": "Kruti · Sailing Club, Kochi"
+      "for": "Kruti · Sailing Club, Kochi",
+      "shape": "#829939",
+      "palette": [
+        "#c88851",
+        "#829939",
+        "#493e20",
+        "#3b5829"
+      ]
     },
     {
       "id": "red-room",
@@ -689,9 +801,9 @@
       "kind": "Bollywood night",
       "for": "Pooja + Nihal",
       "src": "YouTube @Rainmakerweddingplanners",
-      "bg": "#1c0204",
-      "accent": "#ff3b3b",
-      "ink": "#ffecec",
+      "bg": "#930008",
+      "accent": "#dfb287",
+      "ink": "#f6efe3",
       "desc": "The Red Room — Pooja and Nihal’s Bollywood night, a dance floor drenched in red light.",
       "link": "https://www.youtube.com/watch?v=uPoAYPHbMfs",
       "video": "uPoAYPHbMfs",
@@ -711,6 +823,13 @@
           "w": 1280,
           "h": 720
         }
+      ],
+      "shape": "#d8a26f",
+      "palette": [
+        "#930008",
+        "#d8a26f",
+        "#291646",
+        "#5b2d50"
       ]
     },
     {
@@ -718,9 +837,9 @@
       "name": "Agrabah",
       "kind": "Sangeet",
       "src": "site",
-      "bg": "#2a0f3b",
-      "accent": "#e9b85c",
-      "ink": "#fbefff",
+      "bg": "#961b2b",
+      "accent": "#e7b7bc",
+      "ink": "#f6efe3",
       "desc": "A gateway to the wondrous kingdom of Agrabah — bustling streets, mehendi, shemaghs and a 360-degree photobooth.",
       "link": "https://rainmakerweddings.com/jacob-and-treesa/agrabah/",
       "images": [
@@ -755,16 +874,24 @@
           "h": 960
         }
       ],
-      "for": "Jacob + Treesa · Grand Hyatt"
+      "for": "Jacob + Treesa · Grand Hyatt",
+      "shape": "#d07d85",
+      "palette": [
+        "#961b2b",
+        "#d07d85",
+        "#8691b7",
+        "#cdadbf",
+        "#52534b"
+      ]
     },
     {
       "id": "sakura-ball",
       "name": "Sakura Ball",
       "kind": "Reception",
       "src": "site",
-      "bg": "#3b2230",
-      "accent": "#f6c2cf",
-      "ink": "#fff2f5",
+      "bg": "#992d54",
+      "accent": "#edcbb3",
+      "ink": "#f6efe3",
       "desc": "A profusion of orchids and hydrangeas — thousands of blooms, florally decorated bird cages and a majestic chandelier.",
       "link": "https://rainmakerweddings.com/britto-sasikala/sakura-ball-reception/",
       "images": [
@@ -799,16 +926,22 @@
           "h": 959
         }
       ],
-      "for": "Britto + Sasikala"
+      "for": "Britto + Sasikala",
+      "shape": "#dfa379",
+      "palette": [
+        "#9c345a",
+        "#dfa379",
+        "#becaae"
+      ]
     },
     {
       "id": "bali-ahoy",
       "name": "Bali Ahoy!",
       "kind": "Mehendi at sea",
       "src": "site",
-      "bg": "#06354b",
-      "accent": "#ffd166",
-      "ink": "#eafaff",
+      "bg": "#aa122f",
+      "accent": "#aad3f5",
+      "ink": "#f6efe3",
       "desc": "A Mehendi on board a Sea Safari Cruise — a pirate ship decked with colour-splashed banners, dream-catchers and lanterns.",
       "link": "https://rainmakerweddings.com/sneha-selva/mehendi-bali-ahoy/",
       "images": [
@@ -843,16 +976,24 @@
           "h": 959
         }
       ],
-      "for": "Sneha + Selva · Bali"
+      "for": "Sneha + Selva · Bali",
+      "shape": "#125b98",
+      "palette": [
+        "#c61537",
+        "#125b98",
+        "#b85430",
+        "#63a9ce",
+        "#393751"
+      ]
     },
     {
       "id": "kolaveri",
       "name": "Why This Kolaveri Nite",
       "kind": "Sangeet",
       "src": "site",
-      "bg": "#2b0830",
-      "accent": "#ff5ea8",
-      "ink": "#fff0fa",
+      "bg": "#0f5f6e",
+      "accent": "#f0c5c6",
+      "ink": "#f6efe3",
       "desc": "A South Indian dappankuthu Sangeet — blinders, alphabeams, an LED wall, imported Sri Lankan lungis and a Thai tuk-tuk entry.",
       "link": "https://rainmakerweddings.com/britto-sasikala/sangeet-why-this-kolaveri-nite/",
       "images": [
@@ -887,16 +1028,24 @@
           "h": 959
         }
       ],
-      "for": "Britto + Sasikala · Hyatt Regency"
+      "for": "Britto + Sasikala · Hyatt Regency",
+      "shape": "#aa2b2d",
+      "palette": [
+        "#116e80",
+        "#aa2b2d",
+        "#6cb6ca",
+        "#d6956a",
+        "#717132"
+      ]
     },
     {
       "id": "twilight",
       "name": "Twilight",
       "kind": "Engagement",
       "src": "site",
-      "bg": "#14302a",
-      "accent": "#cfe8dc",
-      "ink": "#f2fff9",
+      "bg": "#cd8e52",
+      "accent": "#472b14",
+      "ink": "#1b1511",
       "desc": "An enchanted garden in serene whites — chrysanthemums, hydrangeas and allium beneath a tent of white drapes and chandeliers.",
       "link": "https://rainmakerweddings.com/engagement-twilight/",
       "images": [
@@ -931,16 +1080,22 @@
           "h": 959
         }
       ],
-      "for": "Gayathry + Siddharth · The Leela Kovalam"
+      "for": "Gayathry + Siddharth · The Leela Kovalam",
+      "shape": "#673e1d",
+      "palette": [
+        "#c18e5e",
+        "#673e1d",
+        "#394b26"
+      ]
     },
     {
       "id": "coachella",
       "name": "Coachella",
       "kind": "1st birthday",
       "src": "site",
-      "bg": "#2c1747",
-      "accent": "#ffb3d1",
-      "ink": "#fff5fb",
+      "bg": "#a01e61",
+      "accent": "#ebc3c8",
+      "ink": "#f6efe3",
       "desc": "A pastel dream — swirled pathways, surfboards, rainbow-hued tablescapes and candy-toned stages.",
       "link": "https://rainmakerweddings.com/adiras-birthday/",
       "images": [
@@ -975,16 +1130,24 @@
           "h": 1800
         }
       ],
-      "for": "Adira"
+      "for": "Adira",
+      "shape": "#bd4e5c",
+      "palette": [
+        "#ba2371",
+        "#bd4e5c",
+        "#e7cb88",
+        "#e1a992",
+        "#68492f"
+      ]
     },
     {
       "id": "wakanda",
       "name": "Wakanda",
       "kind": "Celebration",
       "src": "site",
-      "bg": "#170d2b",
-      "accent": "#b892ff",
-      "ink": "#f4efff",
+      "bg": "#0c0f72",
+      "accent": "#e454b8",
+      "ink": "#f6efe3",
       "desc": "A Wakanda-themed celebration for #OhMyGeosh.",
       "link": "https://rainmakerweddings.com/geon-sherine/wakanda/",
       "images": [
@@ -1019,16 +1182,23 @@
           "h": 545
         }
       ],
-      "for": "Geon + Sherine"
+      "for": "Geon + Sherine",
+      "shape": "#67104c",
+      "palette": [
+        "#0c0f72",
+        "#67104c",
+        "#441356",
+        "#7f6c8b"
+      ]
     },
     {
       "id": "purple-ball",
       "name": "Purple Ball",
       "kind": "Celebration",
       "src": "site",
-      "bg": "#230a34",
-      "accent": "#c992ff",
-      "ink": "#fbf2ff",
+      "bg": "#9c1938",
+      "accent": "#e6bdb3",
+      "ink": "#f6efe3",
       "desc": "The Purple Ball — one of three themed nights for #letsGetJeezy.",
       "link": "https://rainmakerweddings.com/jeeban-sozy/purple-ball/",
       "images": [
@@ -1063,7 +1233,15 @@
           "h": 545
         }
       ],
-      "for": "Jeeben + Sozy"
+      "for": "Jeeben + Sozy",
+      "shape": "#8e4734",
+      "palette": [
+        "#9c1938",
+        "#8e4734",
+        "#5f812e",
+        "#d6a089",
+        "#584426"
+      ]
     }
   ]
 }

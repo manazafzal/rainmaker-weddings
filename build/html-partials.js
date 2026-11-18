@@ -31,6 +31,9 @@ function fill(html, vars) {
 function processHtml(html, depth = 0) {
   if (depth > 8) throw new Error('html-partials: include depth exceeded');
   const site = readJSON('src/content/site.json');
+  // SITE_URL (build-time) sets the absolute URL used by canonical, og:url, og:image, schema
+  // and the sitemap. Preview builds point it at the preview; production uses site.json.
+  if (process.env.SITE_URL) site.siteUrl = process.env.SITE_URL.replace(/\/+$/, '');
   if (depth === 0) html = fill(html, site);
   html = html.replace(/<!--\s*@include\s+([^\s]+)\s*([^>]*?)-->/g, (_, file, attrs) => {
     const vars = { ...site, ...parseAttrs(attrs) };
@@ -120,7 +123,12 @@ export function htmlBase() {
       },
     },
     closeBundle() {
-      if (noindex) writeFileSync(resolve(outDir, 'robots.txt'), '# Preview build: not for indexing. Production robots.txt is public/robots.txt.\nUser-agent: *\nDisallow: /\n');
+      const siteUrl = (process.env.SITE_URL || '').replace(/\/+$/, '');
+      if (siteUrl) for (const f of ['sitemap.xml', 'robots.txt']) {
+        const p = resolve(outDir, f);
+        if (existsSync(p)) writeFileSync(p, readFileSync(p, 'utf8').replaceAll('https://rainmakerweddings.com', siteUrl));
+      }
+      if (noindex) writeFileSync(resolve(outDir, 'robots.txt'), `# Preview build: not for indexing. Production robots.txt is public/robots.txt.\nUser-agent: *\nDisallow: /\n${siteUrl ? `\nSitemap: ${siteUrl}/sitemap.xml\n` : ''}`);
     },
   };
 }

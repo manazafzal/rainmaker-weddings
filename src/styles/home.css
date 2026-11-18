@@ -204,3 +204,35 @@
   .worlds__link { display: flex; justify-content: space-between; align-items: baseline; padding-block: 0.28em; }
   .worlds__kind { opacity: 0.8; transform: none; font-size: 0.66rem; color: var(--gold); }
 }
+
+/* ================= Premium punk: hero, light leaks, pinned scene ================= */
+.hero__title { font-size: clamp(3.6rem, 0.2rem + 14.5vw, 16.5rem); letter-spacing: -0.05em; line-height: 1.05; padding-block: 0.08em 0.14em; }
+.hero__l1 { font-weight: 500; }
+.hero__l2 { padding-left: clamp(0rem, 12vw - 1rem, 22rem); letter-spacing: -0.035em; }
+.hero__shade { background:
+  linear-gradient(180deg, rgba(11, 10, 13, 0.55) 0%, rgba(11, 10, 13, 0.12) 22%, rgba(11, 10, 13, 0.7) 46%, rgba(11, 10, 13, 0.93) 100%),
+  linear-gradient(0deg, rgba(42, 6, 9, 0.55), transparent 45%),
+  radial-gradient(120% 90% at 50% 40%, transparent 50%, rgba(11, 10, 13, 0.55) 100%); }
+.hero__leak { position: absolute; inset: 0; pointer-events: none; mix-blend-mode: screen; overflow: hidden; }
+.hero__leak i { position: absolute; border-radius: 50%; filter: blur(60px); opacity: 0.5; animation: leak 16s ease-in-out infinite alternate; }
+.hero__leak i:nth-child(1) { width: 46vmax; height: 30vmax; right: -14vmax; top: -10vmax; background: radial-gradient(closest-side, rgba(255, 170, 70, 0.75), transparent); }
+.hero__leak i:nth-child(2) { width: 34vmax; height: 34vmax; right: 18vw; top: -22vmax; background: radial-gradient(closest-side, rgba(170, 30, 45, 0.8), transparent); animation-duration: 21s; animation-delay: -6s; }
+.hero__leak i:nth-child(3) { width: 6vmax; height: 70vmax; right: 30vw; top: -20vmax; transform: rotate(18deg); background: linear-gradient(90deg, transparent, rgba(255, 236, 190, 0.5), transparent); filter: blur(18px); opacity: 0.35; animation: sweep 11s ease-in-out infinite; }
+@keyframes leak { from { transform: translate3d(0, 0, 0) scale(1); } to { transform: translate3d(-8vw, 6vh, 0) scale(1.18); } }
+@keyframes sweep { 0%, 100% { transform: translateX(-30vw) rotate(18deg); opacity: 0; } 45%, 55% { opacity: 0.35; } 50% { transform: translateX(20vw) rotate(18deg); } }
+
+.scene { position: relative; height: 260vh; background: var(--ink); }
+.scene__pin { position: sticky; top: 0; height: 100svh; overflow: hidden; display: grid; place-items: center; isolation: isolate; }
+.scene__media { position: absolute; inset: 0; margin: 0; z-index: -1; clip-path: inset(calc((1 - var(--p, 0)) * 30%) calc((1 - var(--p, 0)) * 34%)); }
+.scene__media img { width: 100%; height: 100%; object-fit: cover; transform: scale(calc(1.4 - var(--p, 0) * 0.4)); }
+.scene__media::after { content: ''; position: absolute; inset: 0; background: linear-gradient(0deg, rgba(42, 6, 9, 0.55), rgba(11, 10, 13, 0.62) 50%, rgba(11, 10, 13, 0.62)); }
+.scene__copy { display: grid; gap: 0.2em; width: 100%; padding: 0 var(--pad); font-family: var(--f-display); font-size: clamp(2.6rem, 0.4rem + 10vw, 10.5rem); line-height: 1.08; letter-spacing: -0.045em; text-shadow: 0 4px 40px rgba(0, 0, 0, 0.6); }
+.scene__a { color: var(--ivory); transform: translateX(calc((1 - var(--p, 0)) * -3vw)); }
+.scene__b { justify-self: end; text-align: right; color: var(--gold-hi); transform: translateX(calc((1 - var(--p, 0)) * 3vw)); }
+.scene__b em { font-style: italic; }
+@media (prefers-reduced-motion: reduce) { .scene { height: auto; } .scene__pin { position: relative; min-height: 80svh; } .scene { --p: 1 !important; } .hero__leak { display: none; } }
+
+.worlds { background: var(--wb, radial-gradient(60% 50% at 85% 0%, rgba(122, 20, 32, 0.35), transparent 70%), var(--ink)); }
+.cta__bg::after { background: radial-gradient(70% 70% at 50% 50%, rgba(42, 6, 9, 0.35), rgba(11, 10, 13, 0.8)); }
+@media (max-width: 480px) { .hero__l2 { padding-left: 0; } }
+@media (max-width: 700px) { .hero__leak i { opacity: 0.32; } .hero__leak i:nth-child(1) { top: -18vmax; } }

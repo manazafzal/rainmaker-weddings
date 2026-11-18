@@ -15,6 +15,8 @@
   --gold-hi: #f2dea8;
   --gold-lo: #8d6a2e;
   --gold-ink: #6e511c;
+  --oxblood: #7a1420;
+  --oxblood-deep: #2a0609;
   --text: #f5efe4;
   --muted: rgba(245, 239, 228, 0.72);
   --line: rgba(245, 239, 228, 0.16);
@@ -28,7 +30,7 @@
   --fs-md: clamp(1rem, 0.96rem + 0.2vw, 1.12rem);
   --fs-lg: clamp(1.18rem, 1.05rem + 0.6vw, 1.6rem);
   --fs-h3: clamp(1.6rem, 1.2rem + 1.6vw, 2.6rem);
-  --fs-h2: clamp(2.3rem, 1.3rem + 4.2vw, 6rem);
+  --fs-h2: clamp(2.5rem, 0.9rem + 6.2vw, 8.6rem);
   --fs-h1: clamp(3rem, 1rem + 9vw, 11rem);
 
   --pad: clamp(1.25rem, 0.6rem + 3.2vw, 4.5rem);
@@ -136,3 +138,15 @@ body::after { content: ''; position: fixed; inset: -50%; z-index: 300; pointer-e
 .frame::after, .ed__frame::after { content: ''; position: absolute; inset: 0; pointer-events: none; background: linear-gradient(115deg, transparent 35%, rgba(255, 246, 220, 0.22) 50%, transparent 65%); background-size: 250% 100%; background-position: 130% 0; transition: background-position 1.4s var(--ease); }
 a:hover .frame::after, .frame:hover::after, .ed__frame:hover::after { background-position: -30% 0; }
 @media (prefers-reduced-motion: reduce) { body::after { animation: none; } .frame::after, .ed__frame::after { display: none; } }
+
+/* ================= Premium punk: fashion-house attitude ================= */
+::selection { background: var(--oxblood); color: var(--ivory); }
+h1, h2, .sec-title, .feature__title, .vision__title, .cta__title, .pshow__title, .worlds__title, .crafts__h, .reel__title, .phero__title { letter-spacing: -0.035em; }
+h2 em, .sec-title em { font-style: italic; letter-spacing: -0.02em; }
+.btn--gold::after { background: var(--oxblood); }
+.btn--gold:hover { color: var(--ivory); }
+.btn > span, .btn > i { position: relative; z-index: 1; transition: transform 0.5s var(--ease); }
+/* sharp directional wipe for every revealed image */
+.js [data-img-reveal] { clip-path: inset(0 100% 0 0); transition: clip-path 1.5s var(--ease-io); }
+.js [data-img-reveal].is-in { clip-path: inset(0 0 0 0); }
+.js [data-img-reveal] img { transform: scale(1.35); transition: transform 2.2s var(--ease); }

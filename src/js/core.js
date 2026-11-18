@@ -142,3 +142,21 @@ export function initImageParallax() {
   const req = () => { if (!ticking) { ticking = true; requestAnimationFrame(update); } };
   addEventListener('scroll', req, { passive: true }); addEventListener('resize', req); update();
 }
+
+/** Pinned scroll scenes: --p goes 0 → 1 while the scene's sticky stage is pinned. */
+export function initScenes() {
+  const scenes = [...document.querySelectorAll('[data-scene]')];
+  if (!scenes.length) return;
+  if (reduced) { scenes.forEach((s) => s.style.setProperty('--p', 1)); return; }
+  let ticking = false;
+  const update = () => {
+    ticking = false;
+    scenes.forEach((s) => {
+      const r = s.getBoundingClientRect();
+      const p = Math.min(1, Math.max(0, -r.top / Math.max(1, r.height - innerHeight)));
+      s.style.setProperty('--p', (p < 0.85 ? p / 0.85 : 1).toFixed(4));
+    });
+  };
+  const req = () => { if (!ticking) { ticking = true; requestAnimationFrame(update); } };
+  addEventListener('scroll', req, { passive: true }); addEventListener('resize', req); update();
+}

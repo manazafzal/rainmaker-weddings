@@ -135,6 +135,15 @@ Before going live:
 - [ ] Set up 301 redirects from the old WordPress URLs (e.g. `/services/` → `/experiences.html`, `/blogs/` → `/journal.html`, `/contact/` → `/enquire.html`, `/portfolio/` → `/portfolio.html`).
 - [ ] Decide where the blog, the portfolio case studies and the policy pages will live (see TODOs). Right now they link to the existing WordPress pages.
 
+## Before launch (moving from the preview to rainmakerweddings.com)
+
+The GitHub Pages preview is built with `SITE_URL=https://manazafzal.github.io/rainmaker-weddings` and `PREVIEW_NOINDEX=1` (see `.github/workflows/deploy.yml`), so canonical, og:url, og:image, the schema URLs, the sitemap and robots.txt all point at the preview link, and the preview is kept out of search engines. For the real launch:
+
+1. **Set `SITE_URL=https://rainmakerweddings.com`** for the production build (or leave `SITE_URL` unset: the default is `siteUrl` in `src/content/site.json`, which is already `https://rainmakerweddings.com`).
+2. **Remove the noindex:** do not set `PREVIEW_NOINDEX` (drop it from the workflow's build line), so pages get no `noindex, nofollow` meta.
+3. **Remove the robots Disallow:** without `PREVIEW_NOINDEX` the build ships the normal `public/robots.txt` (`Allow: /` plus the sitemap) instead of the preview's `Disallow: /`.
+4. Build at the domain root (no `BASE_PATH`), deploy, then check view-source for the canonical and `/robots.txt` on the live domain.
+
 ## SEO
 * Every page has its own `<title>`, meta description, canonical URL, Open Graph and Twitter tags (`partials/head.html`). The share image is `public/assets/img/og-image.jpg`.
 * `schema.org/LocalBusiness` JSON-LD is generated from `site.json` (`build/render.js › schema`). It contains only facts published on the current site: name, address, phone, email, founding year, socials, and the two awards named there.

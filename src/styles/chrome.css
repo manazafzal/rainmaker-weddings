@@ -50,7 +50,7 @@
 
 /* ---------- Page transition: a curved velvet curtain with a gilt rim; the page recedes behind it ---------- */
 .curtain { position: fixed; inset: 0; z-index: 240; pointer-events: none; visibility: hidden; overflow: hidden; }
-.curtain__panel { position: absolute; left: 0; right: 0; top: -14vh; bottom: -14vh; background: radial-gradient(90% 60% at 50% 100%, #2b1d0e, var(--ink) 62%); transform: translate3d(0, 102%, 0); border-radius: 50% 50% 0 0 / 14vh 14vh 0 0; box-shadow: 0 -1px 0 rgba(242, 222, 168, 0.75), 0 -24px 80px rgba(242, 222, 168, 0.18); }
+.curtain__panel { position: absolute; left: 0; right: 0; top: -14vh; bottom: -14vh; background: radial-gradient(90% 60% at 50% 100%, #5a0f18, #1a0507 45%, var(--ink) 75%); transform: translate3d(0, 102%, 0); border-radius: 50% 50% 0 0 / 14vh 14vh 0 0; box-shadow: 0 -1px 0 rgba(242, 222, 168, 0.75), 0 -24px 80px rgba(242, 222, 168, 0.18); }
 .curtain__edge { display: none; }
 .curtain__label { position: absolute; inset: 0; display: grid; place-items: center; align-content: center; font-family: var(--f-display); font-style: italic; font-size: clamp(2.4rem, 7vw, 6.5rem); color: var(--gold-hi); text-align: center; padding: 0 var(--pad); line-height: 1.2; }
 .curtain__label .cl { display: inline-block; white-space: pre; opacity: 0; transform: translateY(0.5em); filter: blur(8px); transition: opacity 0.6s var(--ease), transform 0.9s var(--ease), filter 0.6s var(--ease); transition-delay: calc(var(--ci) * 28ms + 0.28s); }

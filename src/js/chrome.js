@@ -95,11 +95,16 @@ export function initCursor() {
 
 export function initMagnetic() {
   if (!finePointer || reduced) return;
-  document.querySelectorAll('[data-magnetic]').forEach((el) => {
+  document.querySelectorAll('[data-magnetic], .btn, .ctrl, .lightbox__nav').forEach((el) => {
+    const kids = el.querySelectorAll(':scope > span:not(.btn__play)');
+    const tr = getComputedStyle(el).transition;
+    el.style.transition = `${tr && tr !== 'all 0s ease 0s' ? tr + ', ' : ''}translate 0.6s cubic-bezier(.16,1,.3,1)`;
     el.addEventListener('pointermove', (e) => {
       const r = el.getBoundingClientRect();
-      el.style.transform = `translate(${(e.clientX - r.left - r.width / 2) * 0.18}px, ${(e.clientY - r.top - r.height / 2) * 0.3}px)`;
+      const dx = e.clientX - r.left - r.width / 2, dy = e.clientY - r.top - r.height / 2;
+      el.style.translate = `${dx * 0.25}px ${dy * 0.35}px`;
+      kids.forEach((k) => (k.style.transform = `translate(${dx * 0.12}px, ${dy * 0.12}px)`));
     });
-    el.addEventListener('pointerleave', () => { el.style.transform = ''; });
+    el.addEventListener('pointerleave', () => { el.style.translate = ''; kids.forEach((k) => (k.style.transform = '')); });
   });
 }

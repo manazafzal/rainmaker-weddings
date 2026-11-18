@@ -1,22 +1,67 @@
-<!DOCTYPE html>
-<html lang="en">
+<!doctype html>
+<html lang="en-IN">
 <head>
-  <meta charset="utf-8">
-  <meta http-equiv="refresh" content="0;url=https://manaz-rainmaker-weddings.pages.dev/portfolio.html">
-  <link rel="canonical" href="https://manaz-rainmaker-weddings.pages.dev/portfolio.html">
-  <meta name="robots" content="noindex">
-  <title>Moved</title>
-  <script>
-    (function () {
-      var prefix = "/rainmaker-weddings";
-      var path = window.location.pathname;
-      if (path.indexOf(prefix) === 0) path = path.slice(prefix.length);
-      if (!path) path = "/";
-      location.replace("https://manaz-rainmaker-weddings.pages.dev" + path + window.location.search + window.location.hash);
-    })();
-  </script>
+  <!-- @include partials/head.html title="Portfolio | Signature Weddings & Themed Celebrations — Rainmaker Weddings" description="Thrissur Pooram, Baroque Ball, Cyberpunk, Atlantis, Starry Night and more: explore Rainmaker’s signature themes, Kerala, church, nikkah and destination weddings, socials, films and moments." path="/portfolio.html" -->
+  <link rel="preload" as="image" href="/assets/img/themes/crazy-rich-asians-1.webp">
+  <link rel="stylesheet" href="/src/styles/main.css">
 </head>
-<body>
-  <p>This page has moved to <a href="https://manaz-rainmaker-weddings.pages.dev/portfolio.html">https://manaz-rainmaker-weddings.pages.dev/portfolio.html</a>.</p>
+<body data-page="portfolio">
+  <!-- @include partials/chrome.html -->
+
+  <main id="main">
+    <section class="phero" aria-labelledby="page-title" style="--mood:#2a0606">
+      <div class="phero__media"><img src="/assets/img/themes/crazy-rich-asians-1.webp" alt="A golden arched walkway at the Crazy Rich Asians themed celebration by Rainmaker" width="1440" height="960" fetchpriority="high" decoding="async" data-speed="0.12"></div>
+      <div class="phero__in">
+        <p class="eyebrow" data-reveal>Weddings &amp; socials</p>
+        <h1 class="phero__title" id="page-title" data-split>The <em class="gilt">Portfolio</em><span class="visually-hidden"> — weddings and celebrations by Rainmaker, Kochi, Kerala</span></h1>
+        <p class="phero__lede" data-reveal>Weddings and celebrations across Kerala, India, Thailand, the UAE and Bali, each with its own hashtag.</p>
+      </div>
+    </section>
+
+    <section class="archive" id="archive" aria-labelledby="archive-title">
+      <header class="sec-head sec-head--row">
+        <h2 class="sec-title" id="archive-title" data-split>Every story, <em class="gilt">a world.</em></h2>
+        <div class="filters" role="group" aria-label="Filter portfolio">
+          <button type="button" class="filter is-active" data-filter="all" aria-pressed="true">All</button>
+          <button type="button" class="filter" data-filter="weddings" aria-pressed="false">Weddings</button>
+          <button type="button" class="filter" data-filter="socials" aria-pressed="false">Socials</button>
+        </div>
+      </header>
+      <ul class="works"><!-- @render portfolioGrid --></ul>
+    </section>
+
+    <!-- @render featureWorld id="thrissur-pooram" cta="enquire" -->
+
+    <section class="moments" aria-labelledby="moments-title">
+      <header class="sec-head">
+        <p class="eyebrow" data-reveal>Details, up close</p>
+        <h2 class="sec-title" id="moments-title" data-split>Moments</h2>
+      </header>
+      <ul class="moments__grid"><!-- @render gallery --></ul>
+    </section>
+
+    <section class="filmsec" aria-labelledby="films-title">
+      <header class="sec-head sec-head--row">
+        <h2 class="sec-title" id="films-title" data-split>In <em class="gilt">motion</em></h2>
+        <a class="link-u" href="{{youtube}}" target="_blank" rel="noopener">All films on YouTube ↗</a>
+      </header>
+      <ul class="films"><!-- @render films --></ul>
+    </section>
+
+    <section class="ig" aria-labelledby="ig-title">
+      <header class="sec-head sec-head--row">
+        <h2 class="sec-title" id="ig-title" data-split>On <em class="gilt">Instagram</em></h2>
+        <a class="btn btn--line" href="{{instagram}}" target="_blank" rel="noopener"><span>Follow {{instagramHandle}}</span><i class="btn__arrow" aria-hidden="true"></i></a>
+      </header>
+      <ul class="ig__grid"><!-- @render instagramFeed --></ul>
+    </section>
+
+    <!-- @render cta page="portfolio" -->
+    <!-- @render nextPage current="portfolio" -->
+  </main>
+
+  <!-- @include partials/footer.html -->
+  <!-- @include partials/modals.html -->
+  <script type="module" src="/src/main.js"></script>
 </body>
 </html>

@@ -1,0 +1,87 @@
+{
+  "_note": "Single source of truth for business details. Everything here was taken from rainmakerweddings.com (Nov 2026). Change it here and it updates in every page.",
+  "brand": "Rainmaker Weddings",
+  "legalName": "Rainmaker Signature Experiences",
+  "tagline": "Signature Experiences — Destination Wedding Planners in Kochi, Kerala",
+  "founded": "2011",
+  "siteUrl": "https://rainmakerweddings.com",
+  "phone": "+91 9946 197 008",
+  "phoneHref": "+919946197008",
+  "email": "info@rainmakerevents.co.in",
+  "address": {
+    "line1": "2nd Floor, Door no 52/26, Lane 1",
+    "street": "Toc-H Road, Vyttila",
+    "city": "Kochi",
+    "region": "Kerala",
+    "postcode": "682019",
+    "country": "IN"
+  },
+  "addressOneLine": "2nd Floor, Door no 52/26, Lane 1, Toc-H Rd, Vyttila, Kochi, Kerala 682019",
+  "instagram": "https://www.instagram.com/rainmakerweddings/",
+  "instagramHandle": "@rainmakerweddings",
+  "facebook": "https://www.facebook.com/RainmakerWeddings",
+  "youtube": "https://www.youtube.com/@Rainmakerweddingplanners",
+  "year": "2026",
+  "chapters": [
+    {
+      "slug": "experiences",
+      "href": "/experiences.html",
+      "numeral": "I",
+      "title": "Signature Experiences",
+      "kicker": "What we create",
+      "teaser": "Your idea. Elevated into a world of its own.",
+      "line": "Thrissur Pooram, Baroque Ball, Cyberpunk, Atlantis — twenty-six signature themes and twenty-five crafts.",
+      "image": "/assets/img/decor/04-2.webp"
+    },
+    {
+      "slug": "portfolio",
+      "href": "/portfolio.html",
+      "numeral": "II",
+      "title": "Portfolio",
+      "kicker": "Weddings & Socials",
+      "teaser": "Thirty-four stories. Each one a hashtag.",
+      "line": "#ThrissurPooram, #Baroqueball, #IvoryMehel, #BandBajaBali — step inside the celebrations.",
+      "image": "/assets/img/portfolio/aishwarya-and-vikram.webp"
+    },
+    {
+      "slug": "story",
+      "href": "/story.html",
+      "numeral": "III",
+      "title": "Our Story",
+      "kicker": "About",
+      "teaser": "Born in Kochi. Raised across oceans.",
+      "line": "Since 2011 — from Kerala’s backwaters to Phuket, Bali and the UAE.",
+      "image": "/assets/img/decor/01.webp"
+    },
+    {
+      "slug": "process",
+      "href": "/process.html",
+      "numeral": "IV",
+      "title": "The Process",
+      "kicker": "How we work",
+      "teaser": "Your vision, then elevated.",
+      "line": "It begins with a Curtain Raiser — six movements from a first conversation to the final farewell.",
+      "image": "/assets/img/gallery/aagamanam-5.webp"
+    },
+    {
+      "slug": "journal",
+      "href": "/journal.html",
+      "numeral": "V",
+      "title": "Journal",
+      "kicker": "Blog & Instagram",
+      "teaser": "Notes from behind the mandap.",
+      "line": "Rituals, trends and ideas from the Rainmaker planning room.",
+      "image": "/assets/img/journal/arabian-nights.webp"
+    },
+    {
+      "slug": "enquire",
+      "href": "/enquire.html",
+      "numeral": "VI",
+      "title": "Enquire",
+      "kicker": "Contact",
+      "teaser": "Two names and a date. We’ll bring the rain.",
+      "line": "Tell us about your celebration — we’ll take it from there.",
+      "image": "/assets/img/portfolio/mathew-and-pooja.webp"
+    }
+  ]
+}

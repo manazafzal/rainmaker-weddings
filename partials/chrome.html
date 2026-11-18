@@ -1,0 +1,53 @@
+<a class="skip" href="#main">Skip to content</a>
+
+<!-- First visit only: a short rain-curtain intro -->
+<div class="intro" aria-hidden="true">
+  <div class="intro__rain"></div>
+  <img class="intro__logo" src="/assets/img/brand/logo-cream.webp" alt="" width="274" height="224">
+  <p class="intro__line"><span>Signature Experiences</span></p>
+</div>
+
+<!-- Page-transition curtain -->
+<div class="curtain" aria-hidden="true">
+  <div class="curtain__panel"></div>
+  <div class="curtain__edge"></div>
+  <p class="curtain__label"></p>
+</div>
+
+<div class="cursor" aria-hidden="true"><span class="cursor__ring"></span><span class="cursor__label"></span></div>
+
+<header class="hdr" data-header>
+  <a class="hdr__logo" href="/" aria-label="{{brand}}: home">
+    <img src="/assets/img/brand/logo-cream.webp" alt="{{brand}}" width="274" height="224">
+  </a>
+  <nav class="hdr__nav" aria-label="Primary">
+    <a class="hdr__link" href="/experiences.html">Experiences</a>
+    <a class="hdr__link" href="/portfolio.html">Portfolio</a>
+    <a class="hdr__link" href="/story.html">Our Story</a>
+    <a class="hdr__link" href="/process.html">Process</a>
+    <a class="hdr__link" href="/journal.html">Journal</a>
+  </nav>
+  <div class="hdr__end">
+    <a class="btn btn--gold btn--sm hdr__cta" href="/enquire.html" data-magnetic><span>Enquire</span></a>
+    <button class="hdr__menu" type="button" aria-expanded="false" aria-controls="site-menu"><span class="hdr__menu-label">Menu</span><span class="hdr__menu-icon" aria-hidden="true"><i></i><i></i></span></button>
+  </div>
+</header>
+
+<div class="mnav" id="site-menu" hidden>
+  <nav aria-label="Menu">
+    <ul class="mnav__list">
+      <li><a class="mnav__link" href="/">Home</a></li>
+      <li><a class="mnav__link" href="/experiences.html">Experiences</a></li>
+      <li><a class="mnav__link" href="/portfolio.html">Portfolio</a></li>
+      <li><a class="mnav__link" href="/story.html">Our Story</a></li>
+      <li><a class="mnav__link" href="/process.html">Process</a></li>
+      <li><a class="mnav__link" href="/journal.html">Journal</a></li>
+      <li><a class="mnav__link" href="/enquire.html">Enquire</a></li>
+    </ul>
+  </nav>
+  <div class="mnav__foot">
+    <a class="link-u" href="tel:{{phoneHref}}">{{phone}}</a>
+    <a class="link-u" href="mailto:{{email}}">{{email}}</a>
+    <a class="link-u" href="{{instagram}}" target="_blank" rel="noopener">Instagram</a>
+  </div>
+</div>

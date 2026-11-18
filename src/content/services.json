@@ -1,0 +1,70 @@
+{
+  "_note": "Service names and inclusions are copied verbatim from rainmakerweddings.com/services. Grouping into five 'acts' and the act intro lines are design copy — client may edit freely.",
+  "acts": [
+    {
+      "numeral": "I",
+      "title": "The Setting",
+      "intro": "Where it happens, and everything that makes the ground beneath it ready.",
+      "image": "/assets/img/decor/01.webp",
+      "services": [
+        { "name": "Destination, Resorts & Venues", "image": "/assets/img/decor/01-5.webp", "items": ["Finalizing the Destination", "Finalizing the Resort and Venues", "Room allocation"] },
+        { "name": "Venue Marking & Layouting", "image": "/assets/img/decor/03-8.webp", "items": ["Structural & Positional Layouts", "Event & Theme Wise Movement & Seating Layouts"] },
+        { "name": "Infrastructure", "image": "/assets/img/decor/DSC06141-61.webp", "items": ["Tent Structures", "Platforms and Carpets", "Air-conditioning", "Wash and Toilets", "Tables and Chairs"] },
+        { "name": "Technicals & Permissions", "image": "/assets/img/services/Services-Home-13.webp", "items": ["Creative Illumination & Outdoor Lighting", "Lighting Solutions and Management", "Sound Rigging and Management", "Audio-Visual Equipments, Generators and Power Supply"] },
+        { "name": "Illumination", "image": "/assets/img/decor/DSC06829.webp", "items": ["Mirchi/Fairy Lights", "Serial and Strip Lighting", "Bulb Lighting Décor", "Color Metal Halides", "Sharpies and Color Wash", "Decorative Lighting"] }
+      ]
+    },
+    {
+      "numeral": "II",
+      "title": "The Design",
+      "intro": "A visual language for every event — palettes, florals and the smallest stitched detail.",
+      "image": "/assets/img/decor/01-2.webp",
+      "services": [
+        { "name": "Theme & Designs", "image": "/assets/img/decor/01-2.webp", "items": ["Theme selection for each event", "Floral Palettes", "Color Palettes", "3D Designing"] },
+        { "name": "Artwork & Floral Décor", "image": "/assets/img/services/Services-Home-10.webp", "items": ["Floral Arrangements", "Floral Installations", "Floral Backdrops and Aisles", "Tablescapes and Chandeliers", "Floral Accessories"] },
+        { "name": "Graphics Designing", "image": "/assets/img/services/Services-Home-3.webp", "items": ["3D Designing", "Venue Designing", "Invite and Collateral Designing"] },
+        { "name": "Table Décor", "image": "/assets/img/decor/03-2.webp", "items": ["Table Cloth", "Runners", "Cutlery and Glassware", "Napkins and holders", "Florals and Stationary", "Centrepieces", "Table numbers and Name cards", "Favours and Votives"] },
+        { "name": "Trousseau Planning", "image": "/assets/img/services/Services-Home-22.webp", "items": [] },
+        { "name": "Make Up & Styling", "image": "/assets/img/decor/00.webp", "items": ["Bridal Make Up", "Groom Styling", "Family Styling & Make up"] }
+      ]
+    },
+    {
+      "numeral": "III",
+      "title": "The Guests",
+      "intro": "From the first invitation to the last transfer home, every guest held in care.",
+      "image": "/assets/img/services/Services-Home-3.webp",
+      "services": [
+        { "name": "Invites & RSVPs", "image": "/assets/img/services/Services-Home-3.webp", "items": ["E invites", "Physical invites", "Box invites", "RSVP and guest lists to be formulated"] },
+        { "name": "Wedding Announcements", "image": "/assets/img/services/Services-Home-14.webp", "items": ["Physical Invitations (Couture offset printed, laser cut, boxed, or sculpted)", "E-Invites (Animated, save the date videos or wedding itinerary)", "Wedding Websites"] },
+        { "name": "Travel, Accommodation & Logistics", "image": "/assets/img/decor/01.webp", "items": ["RSVP Management", "Travel & Accommodation Rosters", "Airport / Hotel Transfers (Individuals, Groups or VIPs)", "Accommodations (Resorts or Service apartments)"] },
+        { "name": "Hospitality", "image": "/assets/img/decor/05.webp", "items": ["Help Desks at Venues / Hotels", "Guest Relation Executives to Assist Guests", "Theme Based Guest Welcome", "Housekeeping at Event Venues"] },
+        { "name": "Favours", "image": "/assets/img/decor/01-3-1.webp", "items": ["Confectionaries and Sweets", "Branded Cosmetic Articles", "Decorated Artworks", "Ornaments and Trinkets", "Fashion Accessories", "Succulents and Plants"] }
+      ]
+    },
+    {
+      "numeral": "IV",
+      "title": "The Celebration",
+      "intro": "Rituals honoured, entrances staged, and nights that refuse to end.",
+      "image": "/assets/img/decor/04-6.webp",
+      "services": [
+        { "name": "Event Types", "image": "/assets/img/decor/10VPPhera.webp", "items": ["Bridal Shower | Bachelors | Bachelorette", "Haldi | Mehendi | Sangeet | Wedding Eve", "Wedding | Reception", "Cocktail Party | After Party"] },
+        { "name": "Ceremonial Planning", "image": "/assets/img/services/Services-Home-2.webp", "items": ["Engagements", "Ring Ceremonies", "Bachelors", "Bridal Shower", "Haldi & Mehendi", "Sangeet & Tilak", "Wedding", "Homecoming", "Reception"] },
+        { "name": "Grand Entries", "image": "/assets/img/services/Services-Home-15.webp", "items": ["Custom Designed entries for the Groom and Bride together and/or separately", "Surprise + Wow moments during the entry"] },
+        { "name": "Entertainment Design", "image": "/assets/img/decor/13JSCyberpunk.webp", "items": ["Vocal and Instrumental bands of varied genres", "Celebrity artists and performers", "Performances of different cultural arts forms", "International artists and acts", "Designer WOW Acts", "Custom design Grand Entries", "Dance acts of varied genres"] },
+        { "name": "Engagements", "image": "/assets/img/decor/04-3.webp", "items": ["Custom made giveaways", "Art based engagements", "Food based engagements", "Theme based engagements", "Walk-arounds", "Photo opportunities"] }
+      ]
+    },
+    {
+      "numeral": "V",
+      "title": "The Feast & The Memory",
+      "intro": "Menus with a sense of theatre — and the films and books that keep it all.",
+      "image": "/assets/img/services/Services-Home-20.webp",
+      "services": [
+        { "name": "Dining Experience", "image": "/assets/img/services/Services-Home-20.webp", "items": ["Theme Based Menu Curation", "Engaging Food Stations & Quirky Bars", "Designer Food Stations", "Dining Seating Layouts, Tableware & Centerpieces"] },
+        { "name": "Menu Curation", "image": "/assets/img/decor/03-2.webp", "items": ["Drink Menu", "Pass Around Menu", "Sit Down Menu", "Buffet Stations", "Dessert Stations"] },
+        { "name": "Bar Management", "image": "/assets/img/decor/02-8.webp", "items": ["Bar Menu Curation", "Interactive Bartenders", "Creative Drinks & Props"] },
+        { "name": "Photography & Videography", "image": "/assets/img/decor/04-2.webp", "items": ["Storybooks, Coffee Table Books & Candid Photo Books", "Wedding Magazines, Concept Videos", "Wedding Trailers & Wedding Highlights, Live Webcast"] }
+      ]
+    }
+  ]
+}

@@ -1,22 +1,48 @@
-<!DOCTYPE html>
-<html lang="en">
+<!doctype html>
+<html lang="en-IN">
 <head>
-  <meta charset="utf-8">
-  <meta http-equiv="refresh" content="0;url=https://manaz-rainmaker-weddings.pages.dev/experiences.html">
-  <link rel="canonical" href="https://manaz-rainmaker-weddings.pages.dev/experiences.html">
-  <meta name="robots" content="noindex">
-  <title>Moved</title>
-  <script>
-    (function () {
-      var prefix = "/rainmaker-weddings";
-      var path = window.location.pathname;
-      if (path.indexOf(prefix) === 0) path = path.slice(prefix.length);
-      if (!path) path = "/";
-      location.replace("https://manaz-rainmaker-weddings.pages.dev" + path + window.location.search + window.location.hash);
-    })();
-  </script>
+  <!-- @include partials/head.html title="Signature Experiences | Themed Weddings & Services — Rainmaker Weddings, Kochi" description="Rainmaker Signature Experiences: themed weddings and celebrations built around your idea — from Thrissur Pooram to Baroque Ball and Cyberpunk — plus destination, design, guests, entertainment, dining and photography under one roof." path="/experiences.html" -->
+  <link rel="preload" as="image" href="/assets/img/decor/04-2.webp">
+  <link rel="stylesheet" href="/src/styles/main.css">
 </head>
-<body>
-  <p>This page has moved to <a href="https://manaz-rainmaker-weddings.pages.dev/experiences.html">https://manaz-rainmaker-weddings.pages.dev/experiences.html</a>.</p>
+<body data-page="experiences">
+  <!-- @include partials/chrome.html -->
+
+  <main id="main">
+    <section class="phero" aria-labelledby="page-title" style="--mood:#1a120a">
+      <div class="phero__media"><img src="/assets/img/decor/04-2.webp" alt="A lit mandap framed by draped fabric and florals, designed by Rainmaker" width="1024" height="683" fetchpriority="high" decoding="async" data-speed="0.12"></div>
+      <div class="phero__in">
+        <p class="eyebrow" data-reveal>What we create</p>
+        <h1 class="phero__title" id="page-title" data-split>Signature <em class="gilt">Experiences</em><span class="visually-hidden"> — themed weddings and wedding planning services in Kerala</span></h1>
+        <p class="phero__lede" data-reveal>Your idea, elevated into a world of its own, then brought to life by every craft under one roof. From Kerala to Thailand, the UAE and Bali.</p>
+      </div>
+    </section>
+
+    <section class="tindex" id="themes" aria-labelledby="themes-title">
+      <header class="sec-head">
+        <p class="eyebrow" data-reveal>The worlds we have built</p>
+        <h2 class="sec-title" id="themes-title" data-split>A temple festival, <em class="gilt">a Van Gogh sky.</em></h2>
+        <p class="sec-lede" data-reveal>From a Kerala temple festival to a neon Night City and a Baroque ballroom: each began as a client’s idea. Tap any photo to see it larger.</p>
+      </header>
+      <ul class="tcards"><!-- @render themeCards --></ul>
+    </section>
+
+    <!-- @render featureWorld id="starry-night" cta="enquire" -->
+
+    <section class="acts" id="crafts" aria-labelledby="crafts-title">
+      <header class="sec-head">
+        <p class="eyebrow" data-reveal>Every craft under one roof</p>
+        <h2 class="sec-title" id="crafts-title" data-split>From the first site visit <em class="gilt">to the last sparkler.</em></h2>
+      </header>
+      <!-- @render serviceActs -->
+    </section>
+
+    <!-- @render cta page="experiences" -->
+    <!-- @render nextPage current="experiences" -->
+  </main>
+
+  <!-- @include partials/footer.html -->
+  <!-- @include partials/modals.html -->
+  <script type="module" src="/src/main.js"></script>
 </body>
 </html>

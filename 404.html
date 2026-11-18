@@ -1,22 +1,26 @@
-<!DOCTYPE html>
-<html lang="en">
+<!doctype html>
+<html lang="en-IN">
 <head>
-  <meta charset="utf-8">
-  <meta http-equiv="refresh" content="0;url=https://manaz-rainmaker-weddings.pages.dev/">
-  <link rel="canonical" href="https://manaz-rainmaker-weddings.pages.dev/">
-  <meta name="robots" content="noindex">
-  <title>Moved</title>
-  <script>
-    (function () {
-      var prefix = "/rainmaker-weddings";
-      var path = window.location.pathname;
-      if (path.indexOf(prefix) === 0) path = path.slice(prefix.length);
-      if (!path) path = "/";
-      location.replace("https://manaz-rainmaker-weddings.pages.dev" + path + window.location.search + window.location.hash);
-    })();
-  </script>
+  <!-- @include partials/head.html title="Page not found | Rainmaker Weddings" description="This page has wandered off. Find your way back to Rainmaker Weddings." path="/404.html" -->
+  <link rel="stylesheet" href="/src/styles/main.css">
 </head>
-<body>
-  <p>This page has moved to <a href="https://manaz-rainmaker-weddings.pages.dev/">https://manaz-rainmaker-weddings.pages.dev/</a>.</p>
+<body data-page="404">
+  <!-- @include partials/chrome.html -->
+
+  <main id="main">
+    <section class="phero phero--center" aria-labelledby="page-title" style="--mood:#0b0a0d">
+      <div class="phero__media"><img src="/assets/img/themes/starry-night-3.webp" alt="" decoding="async"></div>
+      <div class="phero__in">
+        <p class="eyebrow">Page not found</p>
+        <h1 class="phero__title" id="page-title" data-split>Lost in <em class="gilt">the rain</em></h1>
+        <p class="phero__lede">This page has wandered off, like a guest at the after-party.</p>
+        <p><a class="btn btn--gold" href="/"><span>Back to the beginning</span></a></p>
+      </div>
+    </section>
+  </main>
+
+  <!-- @include partials/footer.html -->
+  <!-- @include partials/modals.html -->
+  <script type="module" src="/src/main.js"></script>
 </body>
 </html>

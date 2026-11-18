@@ -1,22 +1,87 @@
-<!DOCTYPE html>
-<html lang="en">
+<!doctype html>
+<html lang="en-IN">
 <head>
-  <meta charset="utf-8">
-  <meta http-equiv="refresh" content="0;url=https://manaz-rainmaker-weddings.pages.dev/enquire.html">
-  <link rel="canonical" href="https://manaz-rainmaker-weddings.pages.dev/enquire.html">
-  <meta name="robots" content="noindex">
-  <title>Moved</title>
-  <script>
-    (function () {
-      var prefix = "/rainmaker-weddings";
-      var path = window.location.pathname;
-      if (path.indexOf(prefix) === 0) path = path.slice(prefix.length);
-      if (!path) path = "/";
-      location.replace("https://manaz-rainmaker-weddings.pages.dev" + path + window.location.search + window.location.hash);
-    })();
-  </script>
+  <!-- @include partials/head.html title="Enquire | Plan Your Wedding with Rainmaker Weddings, Kochi" description="Tell us your names, date and destination. Call +91 9946 197 008, email info@rainmakerevents.co.in or visit us at Toc-H Road, Vyttila, Kochi." path="/enquire.html" -->
+  <link rel="preload" as="image" href="/assets/img/portfolio/mathew-and-pooja.webp">
+  <link rel="stylesheet" href="/src/styles/main.css">
 </head>
-<body>
-  <p>This page has moved to <a href="https://manaz-rainmaker-weddings.pages.dev/enquire.html">https://manaz-rainmaker-weddings.pages.dev/enquire.html</a>.</p>
+<body data-page="enquire">
+  <!-- @include partials/chrome.html -->
+
+  <main id="main">
+    <section class="enq" aria-labelledby="page-title">
+      <div class="enq__bg" aria-hidden="true"><img src="/assets/img/portfolio/mathew-and-pooja.webp" alt="" fetchpriority="high" decoding="async"></div>
+      <div class="enq__intro">
+        <p class="eyebrow" data-reveal>Enquire</p>
+        <h1 class="phero__title enq__title" id="page-title" data-split>Let’s <em class="gilt">begin.</em><span class="visually-hidden"> Plan your destination wedding with Rainmaker, Kochi</span></h1>
+        <p class="phero__lede" data-reveal>Two names and a date. We’ll bring the rain.</p>
+        <dl class="enq__details" data-reveal>
+          <div><dt class="eyebrow">Call</dt><dd><a class="link-u" href="tel:{{phoneHref}}">{{phone}}</a></dd></div>
+          <div><dt class="eyebrow">Write</dt><dd><a class="link-u" href="mailto:{{email}}">{{email}}</a></dd></div>
+          <div><dt class="eyebrow">Visit</dt><dd><address>{{addressOneLine}}</address><a class="link-u" href="https://www.google.com/maps/search/?api=1&amp;query=Rainmaker+Weddings+Toc-H+Road+Vyttila+Kochi" target="_blank" rel="noopener">Open in Google Maps ↗</a></dd></div>
+        </dl>
+      </div>
+      <div class="enq__panel">
+        <!-- FORM WIRING: see README › "Enquiry form". Netlify works out of the box; elsewhere set data-endpoint (Formspree etc.). -->
+        <form class="form" name="enquiry" method="POST" action="/enquire.html?sent=1"
+            data-netlify="true" netlify-honeypot="company" data-enquiry-form data-endpoint="" novalidate>
+        <input type="hidden" name="form-name" value="enquiry">
+        <p class="visually-hidden"><label>Leave this empty <input name="company" tabindex="-1" autocomplete="off"></label></p>
+
+        <div class="field">
+          <input class="field__input" id="f-names" name="couple_names" type="text" autocomplete="name" required placeholder=" ">
+          <label class="field__label" for="f-names">Couple names *</label>
+          <span class="field__error" aria-live="polite"></span>
+        </div>
+        <div class="form__row">
+          <div class="field">
+            <input class="field__input" id="f-date" name="wedding_date" type="date" placeholder=" ">
+            <label class="field__label field__label--fixed" for="f-date">Wedding date</label>
+          </div>
+          <div class="field">
+            <input class="field__input" id="f-dest" name="destination" type="text" placeholder=" ">
+            <label class="field__label" for="f-dest">Destination</label>
+          </div>
+        </div>
+        <fieldset class="field field--choices">
+          <legend class="field__legend">Type of wedding</legend>
+          <div class="choices">
+            <label class="choice"><input type="radio" name="wedding_type" value="Hindu"><span>Hindu</span></label>
+            <label class="choice"><input type="radio" name="wedding_type" value="Muslim"><span>Muslim</span></label>
+            <label class="choice"><input type="radio" name="wedding_type" value="Christian"><span>Christian</span></label>
+            <label class="choice"><input type="radio" name="wedding_type" value="Non Religious"><span>Non Religious</span></label>
+          </div>
+        </fieldset>
+        <div class="form__row">
+          <div class="field">
+            <input class="field__input" id="f-phone" name="phone" type="tel" autocomplete="tel" required placeholder=" " pattern="[0-9+()\-\s]{7,}">
+            <label class="field__label" for="f-phone">Contact number *</label>
+            <span class="field__error" aria-live="polite"></span>
+          </div>
+          <div class="field">
+            <input class="field__input" id="f-email" name="email" type="email" autocomplete="email" required placeholder=" ">
+            <label class="field__label" for="f-email">Email *</label>
+            <span class="field__error" aria-live="polite"></span>
+          </div>
+        </div>
+        <div class="field">
+          <textarea class="field__input field__input--area" id="f-msg" name="message" rows="4" placeholder=" "></textarea>
+          <label class="field__label" for="f-msg">Tell us about your celebration (optional)</label>
+        </div>
+        <div class="form__submit">
+          <button class="btn btn--gold btn--lg" type="submit" data-magnetic><span>Send enquiry</span></button>
+          <p class="form__note">We’ll reply by email or phone. <!-- TODO: client to confirm response-time promise, if any --></p>
+        </div>
+        <div class="form__status" role="status" aria-live="polite"></div>
+      </form>
+      </div>
+    </section>
+
+    <!-- @render nextPage current="enquire" -->
+  </main>
+
+  <!-- @include partials/footer.html -->
+  <!-- @include partials/modals.html -->
+  <script type="module" src="/src/main.js"></script>
 </body>
 </html>

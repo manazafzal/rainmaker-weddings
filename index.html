@@ -1,22 +1,132 @@
-<!DOCTYPE html>
-<html lang="en">
+<!doctype html>
+<html lang="en-IN">
 <head>
-  <meta charset="utf-8">
-  <meta http-equiv="refresh" content="0;url=https://manaz-rainmaker-weddings.pages.dev/">
-  <link rel="canonical" href="https://manaz-rainmaker-weddings.pages.dev/">
-  <meta name="robots" content="noindex">
-  <title>Moved</title>
-  <script>
-    (function () {
-      var prefix = "/rainmaker-weddings";
-      var path = window.location.pathname;
-      if (path.indexOf(prefix) === 0) path = path.slice(prefix.length);
-      if (!path) path = "/";
-      location.replace("https://manaz-rainmaker-weddings.pages.dev" + path + window.location.search + window.location.hash);
-    })();
-  </script>
+  <!-- @include partials/head.html title="Rainmaker Weddings | Signature Experiences — Destination Wedding Planners, Kochi, Kerala" description="Rainmaker Signature Experiences: architects of extraordinary weddings and celebrations. Themed weddings and social events from Kochi, Kerala to Thailand, the UAE and Bali — from a Thrissur Pooram wedding to a Starry Night gala. Destination Wedding Planner of the Year (India) 2023." path="/" -->
+  <link rel="preload" as="image" href="/assets/img/gallery/mathew-pooja-3.webp">
+  <link rel="stylesheet" href="/src/styles/main.css">
 </head>
-<body>
-  <p>This page has moved to <a href="https://manaz-rainmaker-weddings.pages.dev/">https://manaz-rainmaker-weddings.pages.dev/</a>.</p>
+<body data-page="home">
+  <!-- @include partials/chrome.html -->
+
+  <main id="main">
+    <!-- HERO: real celebrations seen through rain on glass (WebGL), with visible controls -->
+    <section class="hero" aria-labelledby="hero-title" data-rain-hero>
+      <div class="hero__stage">
+        <!-- @render heroSlides -->
+        <canvas class="hero__gl" aria-hidden="true"></canvas>
+        <div class="hero__shade" aria-hidden="true"></div>
+      </div>
+      <div class="hero__in">
+        <p class="hero__kicker" data-reveal>Destination wedding planners · Kochi, Kerala</p>
+        <h1 class="hero__title" id="hero-title">
+          <span class="hero__l1" data-split>Signature</span>
+          <span class="hero__l2" data-split><em class="gilt">Experiences</em></span>
+        </h1>
+        <div class="hero__foot">
+          <p class="hero__lede" data-reveal>Architects of extraordinary weddings and celebrations, from Kerala to Thailand, the UAE and Bali.</p>
+          <p class="hero__actions" data-reveal>
+            <a class="btn btn--gold" href="/enquire.html" data-magnetic><span>Plan your celebration</span></a>
+            <button class="btn btn--ghost" type="button" data-youtube-modal="Wa8qlsI9R74" data-magnetic><span class="btn__play" aria-hidden="true"></span><span>Watch the showreel</span></button>
+          </p>
+        </div>
+      </div>
+      <div class="hero__now">
+        <p class="hero__now-text"><span class="hero__now-k">Now showing</span> <span class="hero__now-name">Mathew + Pooja</span></p>
+        <div class="hero__ctrl">
+          <button type="button" class="ctrl" data-hero-prev aria-label="Previous celebration"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M15 5l-7 7 7 7" fill="none" stroke="currentColor" stroke-width="1.4"/></svg></button>
+          <button type="button" class="ctrl" data-hero-pause aria-label="Pause slideshow" aria-pressed="false"><svg class="i-pause" viewBox="0 0 24 24" aria-hidden="true"><path d="M8 5v14M16 5v14" stroke="currentColor" stroke-width="1.6"/></svg><svg class="i-play" viewBox="0 0 24 24" aria-hidden="true"><path d="M8 5v14l11-7z" fill="currentColor"/></svg></button>
+          <button type="button" class="ctrl" data-hero-next aria-label="Next celebration"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M9 5l7 7-7 7" fill="none" stroke="currentColor" stroke-width="1.4"/></svg></button>
+        </div>
+      </div>
+      <div class="hero__award">
+        <img src="/assets/img/brand/award-dwp-2023.webp" alt="" width="300" height="265">
+        <p>Destination Wedding Planner of the Year (India) 2023</p>
+      </div>
+    </section>
+
+    <!-- YOUR VISION, THEN ELEVATED: an idea on paper becoming a world (shown, not told) -->
+    <section class="vision" aria-labelledby="vision-title">
+      <div class="vision__copy">
+        <p class="eyebrow" data-reveal>Rainmaker Signature Experiences · since 2011</p>
+        <h2 class="vision__title" id="vision-title" data-split>Your vision, <em class="gilt">then elevated.</em></h2>
+        <p class="vision__lede" data-reveal>You bring the idea. We elevate it into a signature experience: curated, luxurious and unmistakably yours.</p>
+        <p class="vision__text" data-reveal>That is how a wedding became a Thrissur Pooram, a reception became a Baroque Ball, and a Sangeet became a neon Night City. Born in Kochi in 2011, carried to Thailand, the UAE, Bali, Udaipur, Mysore, Mangalore and Goa.</p>
+        <p data-reveal><a class="btn btn--line btn--dark" href="/story.html" data-cursor="Enter"><span>Our story</span><i class="btn__arrow" aria-hidden="true"></i></a></p>
+      </div>
+      <div class="vision__art" aria-hidden="true">
+        <figure class="vision__idea" data-speed="0.1"><div class="frame" data-img-reveal><img src="/assets/img/gallery/bcg-5.webp" alt="" width="1800" height="1200" loading="lazy" decoding="async"></div><figcaption>The idea</figcaption></figure>
+        <figure class="vision__world" data-speed="-0.05"><div class="frame" data-img-reveal data-distort><img src="/assets/img/themes/enchanted-forest-2.webp" alt="" width="1280" height="720" loading="lazy" decoding="async"></div><figcaption>The world</figcaption></figure>
+        <svg class="vision__thread" viewBox="0 0 200 120" preserveAspectRatio="none"><path d="M5 110 C 60 110, 80 10, 195 12" fill="none" stroke="currentColor" stroke-width="1" vector-effect="non-scaling-stroke" pathLength="1" data-draw/></svg>
+      </div>
+    </section>
+
+    <!-- FEATURED WORLDS -->
+    <!-- @render featureWorld id="thrissur-pooram" -->
+    <!-- @render featureWorld id="starry-night" -->
+
+    <!-- EVERY WORLD: typographic index; hover floods the section with that theme's colours -->
+    <section class="worlds" aria-labelledby="worlds-title" data-worlds>
+      <div class="worlds__float" aria-hidden="true"><!-- @render worldsPreload --></div>
+      <header class="worlds__head">
+        <p class="eyebrow" data-reveal>Signature experiences</p>
+        <h2 class="worlds__title" id="worlds-title" data-split>Every celebration, <em class="gilt">its own world.</em></h2>
+        <p class="worlds__lede" data-reveal>A temple festival, a Van Gogh sky, a Baroque ballroom, a neon city. Each began as a client’s idea.</p>
+      </header>
+      <ul class="worlds__list"><!-- @render worldsIndex --></ul>
+      <p class="worlds__more" data-reveal><a class="btn btn--line" href="/experiences.html" data-cursor="Enter"><span>Explore every experience</span><i class="btn__arrow" aria-hidden="true"></i></a></p>
+    </section>
+
+    <!-- PORTFOLIO -->
+    <section class="pshow" aria-labelledby="pshow-title">
+      <header class="pshow__head">
+        <p class="eyebrow" data-reveal>Weddings &amp; socials</p>
+        <h2 class="pshow__title" id="pshow-title" data-split>Celebrations, <em class="gilt">each with a hashtag.</em></h2>
+        <p data-reveal><a class="btn btn--line" href="/portfolio.html" data-cursor="Enter"><span>See the full portfolio</span><i class="btn__arrow" aria-hidden="true"></i></a></p>
+      </header>
+      <div class="pcols"><!-- @render portfolioColumns --></div>
+    </section>
+
+    <!-- FILMS -->
+    <section class="reel" aria-labelledby="reel-title">
+      <button class="reel__big" type="button" data-youtube-modal="Wa8qlsI9R74" data-cursor="Play">
+        <span class="reel__media" aria-hidden="true"><img src="/assets/img/themes/crazy-rich-asians-2.webp" alt="" loading="lazy" decoding="async" data-speed="0.1"></span>
+        <span class="reel__copy">
+          <span class="eyebrow">In motion</span>
+          <span class="reel__title" id="reel-title">Watch a world <em class="gilt">come alive</em></span>
+          <span class="reel__play" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z" fill="currentColor"/></svg></span>
+          <span class="reel__hint">Play the Rainmaker showreel</span>
+        </span>
+      </button>
+      <ul class="films films--row"><!-- @render films limit="3" --></ul>
+      <p class="reel__more"><a class="link-u" href="{{youtube}}" target="_blank" rel="noopener">More films on YouTube ↗</a></p>
+    </section>
+
+    <!-- CRAFTS -->
+    <section class="crafts" aria-labelledby="crafts-title" data-hover-reveal>
+      <div class="crafts__float" aria-hidden="true"><!-- @render craftImages --></div>
+      <header class="crafts__head">
+        <p class="eyebrow" data-reveal>Under one roof</p>
+        <h2 class="crafts__h" id="crafts-title" data-split>From the first site visit <em class="gilt">to the last sparkler.</em></h2>
+      </header>
+      <ul class="crafts__list"><!-- @render craftRows --></ul>
+    </section>
+
+    <!-- RECOGNITION -->
+    <section class="laurels" aria-labelledby="laurels-title">
+      <h2 class="eyebrow" id="laurels-title">Recognition</h2>
+      <ul class="laurels__list">
+        <li data-reveal><img src="/assets/img/brand/award-dwp-2023.webp" alt="" width="300" height="265" loading="lazy"><p>Destination Wedding Planner of the Year (India) 2023</p></li>
+        <li data-reveal><img src="/assets/img/brand/giwa.webp" alt="" width="272" height="227" loading="lazy"><p>Global Indian Wedding Awards</p></li>
+        <li data-reveal><img src="/assets/img/brand/wow-asia.webp" alt="" width="272" height="219" loading="lazy"><p>WOW Awards Asia</p></li>
+        <li data-reveal><span class="laurels__word gilt">A-Lister</span><p>Economic Times Panache Wedding A Lister 2021</p></li>
+      </ul>
+    </section>
+
+    <!-- @render cta page="home" -->
+  </main>
+
+  <!-- @include partials/footer.html -->
+  <!-- @include partials/modals.html -->
+  <script type="module" src="/src/main.js"></script>
 </body>
 </html>

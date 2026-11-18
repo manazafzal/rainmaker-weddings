@@ -1,22 +1,42 @@
-<!DOCTYPE html>
-<html lang="en">
+<!doctype html>
+<html lang="en-IN">
 <head>
-  <meta charset="utf-8">
-  <meta http-equiv="refresh" content="0;url=https://manaz-rainmaker-weddings.pages.dev/journal.html">
-  <link rel="canonical" href="https://manaz-rainmaker-weddings.pages.dev/journal.html">
-  <meta name="robots" content="noindex">
-  <title>Moved</title>
-  <script>
-    (function () {
-      var prefix = "/rainmaker-weddings";
-      var path = window.location.pathname;
-      if (path.indexOf(prefix) === 0) path = path.slice(prefix.length);
-      if (!path) path = "/";
-      location.replace("https://manaz-rainmaker-weddings.pages.dev" + path + window.location.search + window.location.hash);
-    })();
-  </script>
+  <!-- @include partials/head.html title="Journal | Wedding Ideas, Trends & Guides — Rainmaker Weddings" description="Ideas, trends and planning guides from the Rainmaker Weddings team — destination weddings, Kerala traditions, bridal fashion, themes, décor and more." path="/journal.html" -->
+  <link rel="preload" as="image" href="/assets/img/journal/arabian-nights.webp">
+  <link rel="stylesheet" href="/src/styles/main.css">
 </head>
-<body>
-  <p>This page has moved to <a href="https://manaz-rainmaker-weddings.pages.dev/journal.html">https://manaz-rainmaker-weddings.pages.dev/journal.html</a>.</p>
+<body data-page="journal">
+  <!-- @include partials/chrome.html -->
+
+  <main id="main">
+    <section class="phero" aria-labelledby="page-title" style="--mood:#2a0f3b">
+      <div class="phero__media"><img src="/assets/img/journal/arabian-nights.webp" alt="An Arabian Nights themed wedding setting by Rainmaker" width="1440" height="961" fetchpriority="high" decoding="async" data-speed="0.12"></div>
+      <div class="phero__in">
+        <p class="eyebrow" data-reveal>Blog &amp; Instagram</p>
+        <h1 class="phero__title" id="page-title" data-split>The <em class="gilt">Journal</em><span class="visually-hidden"> — wedding ideas, trends and guides from Kerala</span></h1>
+        <p class="phero__lede" data-reveal>Notes from behind the mandap: rituals, trends and ideas from the Rainmaker planning room.</p>
+      </div>
+    </section>
+
+    <section class="journal" aria-label="Articles">
+      <!-- TODO: client to migrate the full articles into this site; these are excerpts until then. -->
+      <ul class="posts"><!-- @render journalGrid --></ul>
+    </section>
+
+    <section class="ig" aria-labelledby="ig-title">
+      <header class="sec-head sec-head--row">
+        <h2 class="sec-title" id="ig-title" data-split>On <em class="gilt">Instagram</em></h2>
+        <a class="btn btn--line" href="{{instagram}}" target="_blank" rel="noopener"><span>Follow {{instagramHandle}}</span><i class="btn__arrow" aria-hidden="true"></i></a>
+      </header>
+      <ul class="ig__grid"><!-- @render instagramFeed limit="8" --></ul>
+    </section>
+
+    <!-- @render cta page="journal" -->
+    <!-- @render nextPage current="journal" -->
+  </main>
+
+  <!-- @include partials/footer.html -->
+  <!-- @include partials/modals.html -->
+  <script type="module" src="/src/main.js"></script>
 </body>
 </html>

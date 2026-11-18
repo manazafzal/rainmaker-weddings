@@ -1,0 +1,41 @@
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>{{title}}</title>
+<meta name="description" content="{{description}}">
+<link rel="canonical" href="{{siteUrl}}{{path}}">
+<meta name="theme-color" content="#0b0a0d">
+<meta name="color-scheme" content="dark light">
+
+<!-- Open Graph / social -->
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="{{brand}}">
+<meta property="og:title" content="{{title}}">
+<meta property="og:description" content="{{description}}">
+<meta property="og:url" content="{{siteUrl}}{{path}}">
+<meta property="og:image" content="{{siteUrl}}/assets/img/og-image.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:locale" content="en_IN">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="{{title}}">
+<meta name="twitter:description" content="{{description}}">
+<meta name="twitter:image" content="{{siteUrl}}/assets/img/og-image.jpg">
+
+<link rel="icon" href="/assets/img/brand/icon-32x32.png" sizes="32x32">
+<link rel="icon" href="/assets/img/brand/icon-192x192.png" sizes="192x192">
+<link rel="apple-touch-icon" href="/assets/img/brand/icon-180x180.png">
+
+<!-- Fonts: Bodoni Moda + Inter Tight, self-hosted (see src/styles/fonts.css) -->
+
+<!-- Intro plays once per session (home only); page-transition curtain state survives navigation -->
+<script>
+  try {
+    var d = document.documentElement;
+    d.classList.add('js');
+    var home = /\/(index\.html)?$/.test(location.pathname);
+    if (!home || sessionStorage.getItem('rm-intro') || matchMedia('(prefers-reduced-motion: reduce)').matches) d.classList.add('no-intro');
+    var to = sessionStorage.getItem('rm-to');
+    if (to) { d.classList.add('is-arriving'); d.dataset.arriving = to; sessionStorage.removeItem('rm-to'); }
+  } catch (e) {}
+</script>
+<!-- @render schema path="{{path}}" title="{{title}}" -->

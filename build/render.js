@@ -117,16 +117,18 @@ export function featureWorld({ id, cta = 'experiences' }, { readJSON }) {
   return `
   <section class="feature feature--${id}" id="feature-${id}" aria-labelledby="feature-${id}-title" style="${themeVars(t)}" data-cursor-tone="light">
     ${id === 'starry-night' ? '<div class="sky" aria-hidden="true"><i class="sky__stars"></i><i class="sky__stars sky__stars--b"></i><i class="sky__swirl"></i><i class="sky__swirl sky__swirl--b"></i><i class="sky__moon"></i></div>' : '<div class="feature__glow" aria-hidden="true"></div>'}
-    <div class="feature__copy">
-      <p class="eyebrow" data-reveal>${esc(f.eyebrow)}</p>
-      <h2 class="feature__title" id="feature-${id}-title" data-split>${f.title}</h2>
-      <p class="feature__desc" data-reveal>${esc(t.desc)}</p>
-      <p class="feature__cta" data-reveal><a class="btn btn--line" href="${href}" data-cursor="Enter"><span>${label}</span><i class="btn__arrow" aria-hidden="true"></i></a></p>
-    </div>
-    <div class="feature__gallery">
-      <figure class="feature__fig feature__fig--a" data-speed="-0.06"><div class="frame" data-img-reveal data-distort>${img({ ...a })}</div></figure>
-      <figure class="feature__fig feature__fig--b" data-speed="0.08"><div class="frame" data-img-reveal data-distort>${img({ ...b })}</div></figure>
-      <figure class="feature__fig feature__fig--c" data-speed="-0.12"><div class="frame" data-img-reveal data-distort>${img({ ...c })}</div></figure>
+    <div class="ed">
+      <figure class="ed__lead"><div class="ed__frame" data-img-reveal data-distort>${img({ ...a, eager: false })}</div></figure>
+      <div class="ed__copy">
+        <p class="eyebrow" data-reveal>${esc(f.eyebrow)}</p>
+        <h2 class="feature__title" id="feature-${id}-title" data-split>${f.title}</h2>
+        <p class="feature__desc" data-reveal>${esc(t.desc)}</p>
+        <p class="feature__cta" data-reveal><a class="btn btn--line" href="${href}" data-cursor="Enter"><span>${label}</span><i class="btn__arrow" aria-hidden="true"></i></a></p>
+        <div class="ed__pair">
+          <figure class="ed__small"><div class="frame" data-img-reveal data-distort>${img({ ...b })}</div></figure>
+          <figure class="ed__small"><div class="frame" data-img-reveal data-distort>${img({ ...c })}</div></figure>
+        </div>
+      </div>
     </div>
   </section>`;
 }

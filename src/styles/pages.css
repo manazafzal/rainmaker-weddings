@@ -5,7 +5,8 @@
 .phero__media { position: absolute; inset: 0; z-index: -1; overflow: hidden; }
 .phero__media img { width: 100%; height: 118%; margin-top: -6%; object-fit: cover; opacity: 0.62; animation: heroZoom 2.6s var(--ease) both; }
 @keyframes heroZoom { from { transform: scale(1.18); filter: blur(8px); } to { transform: none; filter: none; } }
-.phero__media::after { content: ''; position: absolute; inset: 0; background: linear-gradient(180deg, rgba(11, 10, 13, 0.6) 0%, transparent 35%, color-mix(in srgb, var(--mood, #000) 40%, rgba(11, 10, 13, 0.92)) 100%); }
+.phero__media::after { content: ''; position: absolute; inset: 0; background: linear-gradient(180deg, rgba(11, 10, 13, 0.6) 0%, rgba(11, 10, 13, 0.18) 30%, rgba(11, 10, 13, 0.68) 58%, color-mix(in srgb, var(--mood, #000) 35%, rgba(11, 10, 13, 0.94)) 100%); }
+.phero .eyebrow { color: var(--gold-hi); text-shadow: 0 1px 14px rgba(0, 0, 0, 0.7); }
 .phero__in { display: grid; gap: 1.4rem; max-width: 1400px; }
 .phero__title { font-size: clamp(3.2rem, 0.8rem + 10.5vw, 12.5rem); line-height: 1.1; padding-block: 0.06em 0.12em; letter-spacing: -0.03em; }
 .phero__lede { max-width: 38rem; font-family: var(--f-display); font-style: italic; font-size: var(--fs-lg); line-height: 1.45; color: rgba(245, 239, 228, 0.92); }
@@ -23,11 +24,11 @@
 .tcard__alt { opacity: 0; }
 .tcard__in:hover .tcard__alt { opacity: 1; transform: scale(1.04); }
 .tcard__body { display: flex; flex-direction: column; gap: 0.8rem; padding: clamp(1.3rem, 2vw, 1.9rem); flex: 1; }
-.tcard__kind { font-size: var(--fs-xs); letter-spacing: 0.18em; text-transform: uppercase; color: var(--t-accent); font-weight: 500; }
+.tcard__kind { font-size: var(--fs-xs); letter-spacing: 0.18em; text-transform: uppercase; color: color-mix(in srgb, var(--t-accent) 55%, var(--t-ink)); font-weight: 600; }
 .tcard__name { font-size: clamp(2rem, 1.4rem + 1.6vw, 2.9rem); line-height: 1.12; padding-block: 0.04em; }
 .tcard__desc { font-size: var(--fs-sm); opacity: 0.86; flex: 1; }
-.tcard__thumbs { display: flex; gap: 0.5rem; margin-top: 0.4rem; }
-.tcard__thumb { width: 58px; height: 58px; overflow: hidden; border: 1px solid color-mix(in srgb, var(--t-ink) 25%, transparent); transition: border-color 0.3s, transform 0.4s var(--ease); }
+.tcard__thumbs { display: grid; grid-template-columns: repeat(6, minmax(0, 1fr)); gap: 0.4rem; margin-top: 0.4rem; }
+.tcard__thumb { width: 100%; aspect-ratio: 1; min-width: 0; overflow: hidden; border: 1px solid color-mix(in srgb, var(--t-ink) 25%, transparent); transition: border-color 0.3s, transform 0.4s var(--ease); }
 .tcard__thumb img { width: 100%; height: 100%; object-fit: cover; }
 .tcard__thumb:hover { border-color: var(--t-accent); transform: translateY(-3px); }
 .tcard:target .tcard__in { outline: 2px solid var(--t-accent); outline-offset: 6px; }
@@ -35,7 +36,8 @@
 /* ---------- Experiences: crafts ---------- */
 .acts { padding: var(--sec) 0; background: var(--ivory); color: var(--ink); }
 .acts .eyebrow { color: var(--gold-lo); }
-.acts .gilt { background-image: linear-gradient(105deg, #6d4f1d 0%, #a9823d 25%, #d8b46a 40%, #8d6a2e 60%, #6d4f1d 100%); background-size: 220% 100%; }
+.acts .gilt, .acts .gilt .w { background-image: linear-gradient(105deg, #5a4116 0%, #7d5d24 30%, #8f6d2c 50%, #7d5d24 70%, #5a4116 100%); background-size: 220% 100%; }
+.acts .eyebrow { color: var(--gold-ink); }
 .act { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); gap: clamp(2rem, 6vw, 6rem); align-items: start; padding: clamp(2.5rem, 5vw, 5rem) var(--pad); scroll-margin-top: var(--hdr); }
 .act--flip .act__media { order: 2; }
 .act__media .frame { aspect-ratio: 4 / 5; }
@@ -184,3 +186,4 @@ input[type='date'].field__input { color-scheme: dark; }
 .next__kicker { font-size: var(--fs-xs); letter-spacing: 0.24em; text-transform: uppercase; color: var(--gold-hi); }
 .next__title { font-family: var(--f-display); font-size: clamp(2.8rem, 1rem + 8vw, 10rem); line-height: 1.1; padding-block: 0.05em 0.1em; transition: font-style 0s; }
 .next__link:hover .next__title { font-style: italic; }
+.phero--center .phero__media::after { background: radial-gradient(75% 60% at 50% 50%, rgba(11, 10, 13, 0.82), rgba(11, 10, 13, 0.55) 70%, rgba(11, 10, 13, 0.75)); }

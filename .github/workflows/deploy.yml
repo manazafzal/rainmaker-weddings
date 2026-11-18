@@ -1,0 +1,77 @@
+# Builds the site and publishes it to GitHub Pages (gh-pages branch).
+# The first run also restores the binary images (uploaded as base64 text under
+# _binary/) and commits them back as normal files.
+name: Deploy to GitHub Pages
+
+on:
+  push:
+    branches: [main]
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: pages
+  cancel-in-progress: true
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Restore source bundle, binary assets and removals
+        # The upload tool can only send text, so files arrive as base64 tar parts in
+        # _binary/ (unpacked here), and images listed in public-files.txt are fetched
+        # from the mirror below if missing. Everything is then committed back as normal files.
+        run: |
+          changed=0
+          if [ -d _binary ]; then
+            for a in $(ls _binary | sed -n 's/\.tar\.b64\.part.*//p' | sort -u); do
+              cat _binary/$a.tar.b64.part* | base64 -d | tar -x
+            done
+            rm -rf _binary; changed=1
+          fi
+          if [ -f public-files.txt ]; then
+            while read -r f; do
+              [ -z "$f" ] && continue
+              if [ ! -f "public/$f" ]; then
+                mkdir -p "$(dirname "public/$f")"
+                curl -fsSL --retry 3 -o "public/$f" "https://manaz-rainmaker-weddings.pages.dev/$f"
+              fi
+            done < public-files.txt
+            rm -f public-files.txt; changed=1
+          fi
+          if [ -f _remove.txt ]; then
+            grep -v '^\s*$' _remove.txt | while read -r f; do rm -rf -- "$f"; done
+            rm -f _remove.txt; changed=1
+          fi
+          if [ "$changed" = 1 ]; then
+            git config user.name "github-actions[bot]"
+            git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+            git add -A
+            git commit -m "Restore source and assets [skip ci]" || true
+            git push || true
+          fi
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 20
+          cache: npm
+
+      - run: npm ci
+
+      - name: Build for the /<repo>/ sub-path
+        # PREVIEW_NOINDEX keeps this GitHub Pages preview out of search engines
+        # (noindex meta on every page + Disallow-all robots.txt). Production builds omit it.
+        run: BASE_PATH="/${GITHUB_REPOSITORY#*/}/" PREVIEW_NOINDEX=1 npm run build
+
+      - run: touch dist/.nojekyll
+
+      - name: Publish dist to gh-pages
+        uses: peaceiris/actions-gh-pages@v4
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: ./dist
+          force_orphan: true

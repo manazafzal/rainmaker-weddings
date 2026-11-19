@@ -129,7 +129,7 @@ a:hover .frame img, button:hover .frame img { transform: scale(1.06); }
 .sec-head { padding: 0 var(--pad); margin-bottom: clamp(2.5rem, 5vw, 5rem); max-width: 1500px; }
 .sec-head--row { display: flex; flex-wrap: wrap; align-items: end; justify-content: space-between; gap: 1.5rem 3rem; max-width: none; }
 .sec-title { font-size: var(--fs-h2); line-height: 1.1; padding-block: 0.08em; margin-top: 0.6rem; text-wrap: balance; }
-.sec-lede { max-width: 38rem; margin-top: 1.4rem; color: color-mix(in srgb, var(--fg) 76%, transparent); font-size: var(--fs-lg); font-family: var(--f-display); font-style: italic; line-height: 1.45; }
+.sec-lede { max-width: 38rem; margin-top: 1.4rem; color: color-mix(in srgb, var(--fg) 84%, transparent); font-size: var(--fs-lg); font-family: var(--f-display); font-style: italic; line-height: 1.45; }
 
 @media (prefers-reduced-motion: reduce) {
   *, *::before, *::after { animation-duration: 0.01ms !important; animation-iteration-count: 1 !important; transition-duration: 0.01ms !important; transition-delay: 0s !important; scroll-behavior: auto !important; }

@@ -430,3 +430,6 @@ h2 em, .sec-title em, .hero__title em, .feature__title em, .worlds__title em, .c
 .hero__kicker { letter-spacing: 0.3em; font-weight: 500; color: color-mix(in srgb, var(--gold) 70%, #f3eadb); }
 @media (max-width: 900px) { .hero__title { font-size: clamp(3rem, 0.4rem + 12vw, 6.4rem); } .hero__l3 { font-size: 0.4em; } }
 .hero__lede { font-style: normal; }
+:root { --gold: #e6d3a8; }
+@property --gold { syntax: '<color>'; inherits: true; initial-value: #e6d3a8; }
+.orbit__stage { height: calc(var(--iw) * 1.42 + 10rem); }

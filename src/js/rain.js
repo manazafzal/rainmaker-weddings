@@ -42,20 +42,21 @@ float ns(vec2 p){vec2 i=floor(p),f=fract(p);f=f*f*(3.-2.*f);return mix(mix(h(i),
 void main(){
   vec2 UV=vec2(v.x,1.-v.y);
   vec2 uv=v*vec2(res.x/res.y,1.)*zoom;
-  float t=time*.5;
+  float t=time*.3;
   vec2 c=Drops(uv,t);
   vec2 e=vec2(.0015,0.);
   float cx=Drops(uv+e,t).x, cy=Drops(uv+e.yx,t).x;
   float wash=sin(prog*3.14159);
-  vec2 n=vec2(cx-c.x,-(cy-c.x))*.5*(1.+wash*1.5);
+  vec2 n=vec2(cx-c.x,-(cy-c.x))*.5*(1.+wash*.6);
   float sharp=clamp(max(smoothstep(.1,.2,c.x),c.y*.9),0.,1.);
   float fog=mix(.72,1.,sharp);
   vec2 u=UV+n;
   vec3 A=mix(texture2D(b0,cover(u,a0)).rgb,texture2D(s0,cover(u,a0)).rgb,fog);
   vec3 B=mix(texture2D(b1,cover(u,a1)).rgb,texture2D(s1,cover(u,a1)).rgb,fog);
   float th=prog*1.3-.15;
-  float nz=ns(UV*5.+vec2(0.,time*.3))*.35+UV.y*.65;
-  float k=1.-smoothstep(th-.12,th,nz);
+  vec2 w=UV*2.2+vec2(ns(UV*3.+time*.05),ns(UV*3.+7.-time*.04))*1.6;
+  float nz=ns(w*1.7)*.55+ns(w*4.1+time*.03)*.25+(1.-length(UV-.5))*.2;
+  float k=1.-smoothstep(th-.22,th,nz);
   vec3 col=mix(A,B,k);
   col+=sharp*.06;
   gl_FragColor=vec4(col,1.);
@@ -146,10 +147,10 @@ function createGL(hero, slides) {
     const A = texOf(slides[st.from]) || texOf(slides[0]);
     const B = texOf(slides[st.to]) || A;
     if (!A) { loop(); return; }
-    if (st.prog < 1) st.prog = Math.min(1, st.prog + 1 / 110);
+    if (st.prog < 1) st.prog = Math.min(1, st.prog + 1 / 200);
     bind(0, A.s); bind(1, A.b); bind(2, B.s); bind(3, B.b);
     g.uniform2f(U.res, canvas.width, canvas.height); g.uniform2fv(U.a0, A.a); g.uniform2fv(U.a1, B.a);
-    g.uniform1f(U.time, (now - st.t0) / 1000); g.uniform1f(U.prog, st.prog); g.uniform1f(U.rain, 0.42); g.uniform1f(U.zoom, canvas.clientWidth < 760 ? 1.9 : 1.35);
+    g.uniform1f(U.time, (now - st.t0) / 1000); g.uniform1f(U.prog, st.prog); g.uniform1f(U.rain, 0.22); g.uniform1f(U.zoom, canvas.clientWidth < 760 ? 1.9 : 1.35);
     g.drawArrays(g.TRIANGLE_STRIP, 0, 4);
     if (st.prog >= 1) st.from = st.to;
     loop();

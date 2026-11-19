@@ -241,3 +241,65 @@ html.is-leaving main { opacity: 1; transform: none; }
 .act__intro { color: color-mix(in srgb, var(--fg) 90%, transparent); }
 .svc__body { color: color-mix(in srgb, var(--fg) 86%, transparent); }
 .foot__dest i { color: var(--gold); }
+
+/* =====================================================================
+   CALM EFFECTS — gold dust, ink dissolves, light on the headings,
+   breathing photos and a soft mist between pages. Nothing jumps.
+   ===================================================================== */
+/* retired: pointer colour spot, fill-from-entry buttons, blooming discs, colour-out reveals */
+.tcard__media::after, .pcard__frame::after, .work__frame::after { display: none; }
+.btn--gold::after, .hdr .btn--gold::after { display: none; }
+.hero__bloom { display: none; }
+.js [data-img-reveal]::before { display: none; }
+.btn--gold { transition: background-color 0.9s var(--ease), box-shadow 0.9s var(--ease), color 0.9s var(--ease); }
+.btn--gold:hover { background: #fff6e0; box-shadow: 0 0 0 1px color-mix(in srgb, var(--gold) 60%, transparent), 0 18px 50px -18px color-mix(in srgb, var(--gold) 70%, transparent); }
+.hdr .btn--gold:hover { background: #f6e3b4; }
+
+/* gold dust canvas */
+.dust { position: fixed; inset: 0; width: 100%; height: 100%; z-index: 90; pointer-events: none; opacity: 0.9; }
+
+/* ink-in-water dissolve: the photo surfaces softly out of a misty bloom */
+@property --ink { syntax: '<percentage>'; inherits: false; initial-value: 0%; }
+.js [data-img-reveal] { --ink: 0%; -webkit-mask-image: radial-gradient(farthest-side at 46% 58%, #000 calc(var(--ink) - 38%), rgba(0,0,0,0.55) calc(var(--ink) - 18%), transparent var(--ink)); mask-image: radial-gradient(farthest-side at 46% 58%, #000 calc(var(--ink) - 38%), rgba(0,0,0,0.55) calc(var(--ink) - 18%), transparent var(--ink)); transition: --ink 2.8s cubic-bezier(0.33, 0, 0.2, 1) 0.1s; }
+.js [data-img-reveal].is-in { --ink: 190%; }
+.js [data-img-reveal] img { transform: none; filter: blur(10px) saturate(0.6) brightness(1.15); transition: filter 2.6s cubic-bezier(0.33, 0, 0.2, 1) 0.2s; }
+.js [data-img-reveal].is-in img { filter: none; }
+
+/* light on the headings: a slow ray of light passes through the gold words */
+.gilt, .gilt .w, h2 em, .sec-title em, .hero__title em, .feature__title em, .worlds__title em, .cta__title em, .pshow__title em, .vision__title em {
+  background: linear-gradient(105deg, var(--gold) 0%, var(--gold) 38%, #fff4d8 50%, var(--gold) 62%, var(--gold) 100%);
+  background-size: 300% 100%; background-position: 100% 0;
+  -webkit-background-clip: text; background-clip: text; -webkit-text-fill-color: transparent; color: var(--gold);
+  animation: ray 11s cubic-bezier(0.45, 0, 0.25, 1) infinite;
+}
+.gilt .w { animation-delay: inherit; }
+@keyframes ray { 0%, 35% { background-position: 100% 0; } 75%, 100% { background-position: 0% 0; } }
+.js h2 em::after, .js .sec-title em::after { background: color-mix(in srgb, var(--gold) 70%, transparent); height: 1px; transition: transform 2.2s cubic-bezier(0.33, 0, 0.2, 1) 0.6s; }
+
+/* photos breathe: a slow, barely-there inhale under the scroll parallax */
+.frame img, .ed__frame img, .tcard__media img, .pcard__frame img, .work__frame img { animation: breathe 18s ease-in-out infinite alternate; }
+.tcard:nth-child(3n+2) .tcard__media img, .pcard:nth-child(2n) .pcard__frame img { animation-duration: 22s; animation-delay: -6s; }
+@keyframes breathe { from { scale: 1.015; } to { scale: 1.07; } }
+
+/* page change: a soft veil of mist rises, then clears */
+.curtain__panel { inset: 0; top: 0; bottom: 0; transform: none !important; border-radius: 0 !important; opacity: 0;
+  background: radial-gradient(120% 90% at 50% 60%, color-mix(in srgb, var(--bg) 55%, #f6efe3 45%) 0%, color-mix(in srgb, var(--bg) 85%, #f6efe3 15%) 45%, var(--bg) 100%);
+  -webkit-backdrop-filter: blur(18px); backdrop-filter: blur(18px); transition: opacity 0.85s cubic-bezier(0.33, 0, 0.2, 1) !important; }
+.curtain__panel::before, .curtain__panel::after { display: none; }
+html.is-leaving .curtain__panel, html.is-arriving .curtain__panel { opacity: 1; }
+html.is-arriving .curtain__panel { transition: none !important; }
+html.is-arrived .curtain__panel { opacity: 0; transition: opacity 1.3s cubic-bezier(0.33, 0, 0.2, 1) 0.15s !important; }
+.curtain__label { color: #f6efe3; }
+
+@media (prefers-reduced-motion: reduce) {
+  .dust { display: none; }
+  .js [data-img-reveal] { -webkit-mask-image: none; mask-image: none; transition: none; }
+  .js [data-img-reveal] img { filter: none; transition: none; }
+  .gilt, .gilt .w, h2 em, .sec-title em, .hero__title em, .feature__title em, .worlds__title em, .cta__title em, .pshow__title em, .vision__title em { animation: none; background-position: 50% 0; }
+  .frame img, .ed__frame img, .tcard__media img, .pcard__frame img, .work__frame img { animation: none; scale: 1.03; }
+  .curtain__panel { transition: none !important; }
+}
+.ed__lead::before { display: none; }
+.swatches li { transform: none; opacity: 0; transition: opacity 1.8s cubic-bezier(0.33, 0, 0.2, 1); transition-delay: calc(var(--i, 0) * 180ms); }
+.feature.is-flooded .swatches li, .tcard.is-in .swatches li { opacity: 1; }
+@media (prefers-reduced-motion: reduce) { .swatches li { opacity: 1; transition: none; } }

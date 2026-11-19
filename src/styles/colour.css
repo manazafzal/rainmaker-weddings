@@ -443,3 +443,4 @@ h2 em, .sec-title em, .hero__title em, .feature__title em, .worlds__title em, .c
 /* plum stage: the hero sits on the page colour, not a per-photo tint */
 .hero { background: transparent; }
 .hdr .btn--gold { background: #e6d3a8; color: #1b1511; } .hdr .btn--gold:hover { background: #f0e2c2; } .hdr__link:hover, .hdr__link[aria-current="page"] { color: #e6d3a8; } .hdr__link::after { background: #e6d3a8; }
+.foot__dest i { color: color-mix(in srgb, var(--gold) 55%, #f3eadb); }

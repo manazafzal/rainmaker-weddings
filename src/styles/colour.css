@@ -37,8 +37,8 @@ html { transition: --bg 1.1s cubic-bezier(0.65, 0, 0.35, 1), --fg 1.1s cubic-bez
 .btn--ghost { border-color: color-mix(in srgb, var(--fg) 55%, transparent); color: var(--fg); background: color-mix(in srgb, var(--bg) 40%, transparent); }
 .btn--ghost:hover { background: var(--fg); color: var(--bg); border-color: var(--fg); }
 .btn--line, .btn--dark { color: var(--fg); }
-.btn--line:hover { color: var(--pop); }
-.btn--line:hover .btn__arrow { background: color-mix(in srgb, var(--pop) 14%, transparent); }
+.btn--line:hover { color: var(--gold); }
+.btn--line:hover .btn__arrow { background: color-mix(in srgb, var(--gold) 14%, transparent); }
 .reel__play { background: var(--pop); color: var(--paper); animation: none; }
 .film__play { background: color-mix(in srgb, var(--paper) 88%, transparent); color: var(--char); border-color: transparent; }
 

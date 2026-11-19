@@ -303,3 +303,7 @@ html.is-arrived .curtain__panel { opacity: 0; transition: opacity 1.3s cubic-bez
 .swatches li { transform: none; opacity: 0; transition: opacity 1.8s cubic-bezier(0.33, 0, 0.2, 1); transition-delay: calc(var(--i, 0) * 180ms); }
 .feature.is-flooded .swatches li, .tcard.is-in .swatches li { opacity: 1; }
 @media (prefers-reduced-motion: reduce) { .swatches li { opacity: 1; transition: none; } }
+/* eyebrows: warm light gold, legible on every colour world even mid-flood */
+.eyebrow, .feature .eyebrow, .vision .eyebrow, .acts .eyebrow { color: color-mix(in srgb, var(--gold) 60%, #f6efe3); }
+.reel__big .eyebrow, .phero .eyebrow, .cta .eyebrow { color: #f6e7c4; text-shadow: 0 1px 14px rgba(0, 0, 0, 0.65); }
+.reel__media img { filter: brightness(0.62) saturate(1.1); }

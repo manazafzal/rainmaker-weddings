@@ -236,3 +236,8 @@ html.is-leaving main { opacity: 1; transform: none; }
 .curtain__panel::before { background: #162f74; }
 .curtain__panel::after { background: #6a2420; }
 .curtain__label { color: #f6efe3; }
+/* leftovers from the paper era: light text on the medium-dark worlds */
+.vision .eyebrow, .vision figcaption, .acts .eyebrow, .svc__sum:hover { color: var(--gold); }
+.act__intro { color: color-mix(in srgb, var(--fg) 90%, transparent); }
+.svc__body { color: color-mix(in srgb, var(--fg) 86%, transparent); }
+.foot__dest i { color: var(--gold); }

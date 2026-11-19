@@ -344,3 +344,12 @@ export function nextPage({ current }) {
     </a>
   </nav>`;
 }
+
+/* ---------- Home: an orbit of theme portals; each opens an immersive world ---------- */
+export function worldsOrbit(_, { readJSON }) {
+  const T = themes(readJSON);
+  return T.map((t) => {
+    const ims = t.images.slice(0, 6).map((x) => x.src).join(',');
+    return `<li class="orbit__item" style="${themeVars(t)}"><a class="portal" href="/experiences.html#theme-${t.id}" data-portal data-id="${t.id}" data-name="${esc(t.name)}" data-kind="${esc(t.kind)}" data-for="${esc(t.for || '')}" data-desc="${esc(t.desc || '')}" data-bg="${t.bg}" data-acc="${t.accent}" data-slides="${ims}" aria-label="Step into ${esc(t.name)}"><span class="portal__arch"><img src="${t.images[0].src}" alt="" loading="lazy" decoding="async"></span><span class="portal__name">${esc(t.name)}</span><span class="portal__kind">${esc(t.kind)}</span></a></li>`;
+  }).join('');
+}

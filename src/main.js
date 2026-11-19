@@ -5,12 +5,13 @@ import gsap from 'gsap';
 import { initSmoothScroll, initReveals, initParallax, initImageParallax, initScenes, initDrawScroll, reduced } from './js/core.js';
 import { initHeader, initMenu, runIntro, initTransitions, initCursor } from './js/chrome.js';
 import { initRainHero } from './js/rain.js';
-import { initWorlds, initCrafts } from './js/hover.js';
+import { initCrafts } from './js/hover.js';
 import { initMedia, initForm, initFilters } from './js/media.js';
 import { initDistort } from './js/distort.js';
 import { initFlood } from './js/colour.js';
 import { initDust } from './js/dust.js';
 import { initShards } from './js/shards.js';
+import { initOrbit } from './js/orbit.js';
 
 initSmoothScroll();
 initHeader();
@@ -23,7 +24,8 @@ initFilters();
 initRainHero();
 initFlood();
 initDust();
-initWorlds();
+
+initOrbit();
 initCrafts();
 initParallax();
 initImageParallax();

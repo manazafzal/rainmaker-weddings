@@ -10,6 +10,7 @@ import { initMedia, initForm, initFilters } from './js/media.js';
 import { initDistort } from './js/distort.js';
 import { initFlood } from './js/colour.js';
 import { initDust } from './js/dust.js';
+import { initShards } from './js/shards.js';
 
 initSmoothScroll();
 initHeader();
@@ -27,6 +28,7 @@ initCrafts();
 initParallax();
 initImageParallax();
 initScenes();
+initShards();
 initDrawScroll();
 runIntro().then(initReveals);
 initDistort({ reduced, gsap });

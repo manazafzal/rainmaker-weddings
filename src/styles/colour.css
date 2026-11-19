@@ -307,3 +307,18 @@ html.is-arrived .curtain__panel { opacity: 0; transition: opacity 1.3s cubic-bez
 .eyebrow, .feature .eyebrow, .vision .eyebrow, .acts .eyebrow { color: color-mix(in srgb, var(--gold) 60%, #f6efe3); }
 .reel__big .eyebrow, .phero .eyebrow, .cta .eyebrow { color: #f6e7c4; text-shadow: 0 1px 14px rgba(0, 0, 0, 0.65); }
 .reel__media img { filter: brightness(0.62) saturate(1.1); }
+
+/* ---------- scene: a photo in drifting fragments that glide together and settle ---------- */
+.scene { height: 320vh; }
+.scene__media { clip-path: none; }
+.scene__media img { transform: none; filter: brightness(0.6) saturate(1.05); }
+.scene__media::after { background: linear-gradient(180deg, color-mix(in srgb, var(--bg) 55%, transparent), color-mix(in srgb, var(--bg) 32%, transparent) 45%, color-mix(in srgb, var(--bg) 62%, transparent)); }
+.scene__media.has-shards img, .scene__media.has-shards::after { opacity: 0; }
+.scene__shards { position: absolute; inset: 0; width: 100%; height: 100%; display: block; }
+.scene__a { transform: none; color: #f6efe3; opacity: clamp(0, (var(--p, 0) - 0.01) * 8, 1); text-shadow: 0 2px 30px color-mix(in srgb, var(--bg) 85%, transparent); }
+.scene__b { --bp: clamp(0, (var(--p, 0) - 0.74) * 5, 1); transform: translateY(calc((1 - var(--bp)) * 0.45em)); opacity: var(--bp); filter: blur(calc((1 - var(--bp)) * 8px)); color: #f6e7c4; font-size: 1.18em; line-height: 1.12; padding: 0.04em 0.12em 0.12em 0.2em; text-shadow: 0 0 40px color-mix(in srgb, #f3d3b8 calc(var(--bp) * 30%), transparent), 0 2px 30px color-mix(in srgb, var(--bg) 85%, transparent); }
+@media (prefers-reduced-motion: reduce) {
+  .scene { height: auto; }
+  .scene__a, .scene__b { opacity: 1; transform: none; filter: none; }
+}
+.scene__a, .scene__b { text-shadow: 0 1px 3px color-mix(in srgb, var(--bg) 70%, transparent), 0 2px 34px color-mix(in srgb, var(--bg) 90%, transparent); }

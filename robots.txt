@@ -1,0 +1,5 @@
+# Preview build: not for indexing. Production robots.txt is public/robots.txt.
+User-agent: *
+Disallow: /
+
+Sitemap: https://manazafzal.github.io/rainmaker-weddings/sitemap.xml

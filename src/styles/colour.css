@@ -307,3 +307,25 @@ html.is-arrived .curtain__panel { opacity: 0; transition: opacity 1.3s cubic-bez
 .eyebrow, .feature .eyebrow, .vision .eyebrow, .acts .eyebrow { color: color-mix(in srgb, var(--gold) 60%, #f6efe3); }
 .reel__big .eyebrow, .phero .eyebrow, .cta .eyebrow { color: #f6e7c4; text-shadow: 0 1px 14px rgba(0, 0, 0, 0.65); }
 .reel__media img { filter: brightness(0.62) saturate(1.1); }
+
+/* ---------- scene: the idea as a gold sketch, dissolving like ink into the real photo ---------- */
+.scene { height: 320vh; }
+.scene__media { clip-path: none; }
+.scene__media img { transform: none; filter: brightness(0.62) saturate(1.05); }
+.scene__media::after { background: linear-gradient(180deg, color-mix(in srgb, var(--bg) 55%, transparent), color-mix(in srgb, var(--bg) 30%, transparent) 45%, color-mix(in srgb, var(--bg) 62%, transparent)); }
+.scene__media.has-ink img, .scene__media.has-ink::after { opacity: 0; }
+.scene__ink { position: absolute; inset: 0; width: 100%; height: 100%; display: block; }
+.scene__copy { --ip: clamp(0, (var(--p, 0) - 0.02) * 6, 1); }
+.scene__a { transform: translateY(calc((1 - var(--ip)) * 0.25em)); opacity: var(--ip); color: #f6efe3; text-shadow: 0 2px 30px color-mix(in srgb, var(--bg) 80%, transparent); }
+.scene__b { transform: none; color: #f6e7c4; position: relative; padding-bottom: 0.18em; }
+.scene__b em { display: inline; }
+.scene__b .sw { display: inline-block; white-space: nowrap; }
+.scene__b .sl { --lp: clamp(0, (var(--p, 0) - 0.58 - var(--i) * 0.016) * 7, 1); display: inline-block; opacity: var(--lp); transform: translateY(calc((1 - var(--lp)) * 0.32em)) scale(calc(0.94 + var(--lp) * 0.06)); filter: blur(calc((1 - var(--lp)) * 10px)); text-shadow: 0 0 calc((1 - var(--lp)) * 30px + 18px) color-mix(in srgb, #f3d3b8 calc(var(--lp) * 35%), transparent), 0 2px 30px color-mix(in srgb, var(--bg) 80%, transparent); }
+.scene__b::after { content: ''; position: absolute; right: 0; bottom: 0; width: min(62%, 30rem); height: 1px; background: linear-gradient(90deg, transparent, #ecd29a 40%, #fff4d8); transform-origin: right; transform: scaleX(clamp(0, (var(--p, 0) - 0.82) * 6, 1)); }
+@media (prefers-reduced-motion: reduce) {
+  .scene { height: auto; }
+  .scene__copy, .scene__b .sl { --ip: 1; --lp: 1; }
+  .scene__b .sl { filter: none; transform: none; opacity: 1; }
+  .scene__b::after { transform: none; }
+}
+.scene__b { font-size: 1.22em; line-height: 1.05; }

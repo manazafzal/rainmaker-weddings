@@ -3,10 +3,10 @@
    The page background (--bg) and text (--fg) are animated custom
    properties: colour.js floods them to the theme in view.
    ===================================================================== */
-@property --bg { syntax: '<color>'; inherits: true; initial-value: #235d61; }
+@property --bg { syntax: '<color>'; inherits: true; initial-value: #4a2a44; }
 @property --fg { syntax: '<color>'; inherits: true; initial-value: #f3eadb; }
 @property --gold { syntax: '<color>'; inherits: true; initial-value: #ecd29a; }
-@property --h-tint { syntax: '<color>'; inherits: true; initial-value: #235d61; }
+@property --h-tint { syntax: '<color>'; inherits: true; initial-value: #4a2a44; }
 @property --h-deep { syntax: '<color>'; inherits: true; initial-value: #f3eadb; }
 html { transition: --bg 1.1s cubic-bezier(0.65, 0, 0.35, 1), --fg 1.1s cubic-bezier(0.65, 0, 0.35, 1), --gold 1.1s; }
 ::selection { background: var(--pop); color: var(--paper); }
@@ -199,12 +199,12 @@ html.is-leaving main { opacity: 1; transform: none; }
    MEDIUM-DARK BASE — deep teal stage (not near-black, not a light page);
    every theme floods to its own medium-dark colour world with ivory text.
    ===================================================================== */
-:root { --base: #235d61; --base-2: #2a676b; --base-3: #337377; --bg: var(--base); --fg: #f3eadb; --gold: #ecd29a; --pop: #f2a07b; --paper-2: var(--base-2); --paper-3: var(--base-3); }
+:root { --base: #4a2a44; --base-2: #553150; --base-3: #61395b; --bg: var(--base); --fg: #f3eadb; --gold: #ecd29a; --pop: #f2a07b; --paper-2: var(--base-2); --paper-3: var(--base-3); }
 ::selection { background: var(--gold); color: var(--char); }
 /* logos are light artwork: show them as-is */
 .hdr img, .foot img[src*="logo"], .mnav img[src*="logo"], .intro__logo, .hero__award img { filter: none; }
 /* header: a deeper tone of whatever colour world is in view, ivory links, gold Enquire */
-.hdr, .hdr.is-solid { background: color-mix(in srgb, color-mix(in srgb, var(--bg) 82%, #0d1416) 92%, transparent); color: #f3eadb; border-bottom-color: color-mix(in srgb, #f3eadb 14%, transparent); }
+.hdr, .hdr.is-solid { background: color-mix(in srgb, color-mix(in srgb, var(--bg) 82%, #160b14) 92%, transparent); color: #f3eadb; border-bottom-color: color-mix(in srgb, #f3eadb 14%, transparent); }
 .hdr__link, .hdr .btn--line, .hdr__burger { color: #f3eadb; }
 .hdr__link:hover, .hdr__link[aria-current='page'] { color: #ecd29a; }
 .hdr__link::after { background: #ecd29a; }
@@ -355,12 +355,12 @@ html.is-arrived .curtain__panel { opacity: 0; transition: opacity 1.3s cubic-bez
 
 /* ---------- the world overlay ---------- */
 .world { position: fixed; inset: 0; width: 100%; height: 100%; max-width: none; max-height: none; margin: 0; padding: 0; border: 0; background: var(--w-bg, var(--base)); color: #f3eadb; overflow-y: auto; overscroll-behavior: contain; --gold: var(--w-acc, #ecd29a); }
-.world::backdrop { background: color-mix(in srgb, var(--w-bg, #235d61) 85%, transparent); -webkit-backdrop-filter: blur(10px); backdrop-filter: blur(10px); }
+.world::backdrop { background: color-mix(in srgb, var(--w-bg, #4a2a44) 85%, transparent); -webkit-backdrop-filter: blur(10px); backdrop-filter: blur(10px); }
 .world[open] { animation: world-wash 0.9s cubic-bezier(0.33, 0, 0.2, 1) both; }
 @keyframes world-wash { from { opacity: 0; } to { opacity: 1; } }
 .world { transition: background-color 1s var(--ease); }
 .world__in { min-height: 100%; padding: 1rem var(--pad) 3rem; display: grid; grid-template-rows: auto 1fr; gap: 1.5rem; }
-.world__top { position: sticky; top: 0; z-index: 2; display: flex; align-items: center; gap: 0.6rem; flex-wrap: wrap; padding: 0.6rem 0; background: color-mix(in srgb, var(--w-bg, #235d61) 92%, transparent); }
+.world__top { position: sticky; top: 0; z-index: 2; display: flex; align-items: center; gap: 0.6rem; flex-wrap: wrap; padding: 0.6rem 0; background: color-mix(in srgb, var(--w-bg, #4a2a44) 92%, transparent); }
 .world__nav, .world__close { display: inline-flex; align-items: center; gap: 0.5rem; min-height: 46px; padding: 0 1rem; border-radius: 999px; border: 1px solid color-mix(in srgb, #f3eadb 38%, transparent); color: #f3eadb; font-size: 0.78rem; letter-spacing: 0.14em; text-transform: uppercase; transition: background-color 0.6s var(--ease), border-color 0.6s var(--ease); }
 .world__nav svg, .world__close svg { width: 18px; height: 18px; flex: none; }
 .world__close { margin-left: auto; background: #f3eadb; color: #1b1511; border-color: #f3eadb; }
@@ -372,7 +372,7 @@ html.is-arrived .curtain__panel { opacity: 0; transition: opacity 1.3s cubic-bez
 .world__desc { font-size: var(--fs-md, 1.1rem); line-height: 1.6; color: color-mix(in srgb, #f3eadb 90%, transparent); max-width: 34rem; margin: 0; }
 .world__go { color: #f3eadb; justify-self: start; }
 .world__photos { list-style: none; margin: 0; padding: 0; display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: clamp(0.6rem, 1.2vw, 1.1rem); }
-.world__photos li { border-radius: 999px 999px 12px 12px; overflow: hidden; aspect-ratio: 3 / 4; background: color-mix(in srgb, #000 18%, var(--w-bg, #235d61)); }
+.world__photos li { border-radius: 999px 999px 12px 12px; overflow: hidden; aspect-ratio: 3 / 4; background: color-mix(in srgb, #000 18%, var(--w-bg, #4a2a44)); }
 .world__photos li:nth-child(3n+2) { margin-top: 2.5rem; }
 .world__photos li:not(:nth-child(-n+3)) { border-radius: 12px; }
 .world__photos img { width: 100%; height: 100%; object-fit: cover; animation: breathe 18s ease-in-out infinite alternate; }
@@ -440,3 +440,6 @@ h2 em, .sec-title em, .hero__title em, .feature__title em, .worlds__title em, .c
 .world__body { overflow-y: auto; overscroll-behavior: contain; min-height: 0; padding: 1rem 0 3rem; }
 .world__copy { top: 0; }
 .world__nav { padding: 0; width: 46px; justify-content: center; }
+/* plum stage: the hero sits on the page colour, not a per-photo tint */
+.hero { background: transparent; }
+.hdr .btn--gold { background: #e6d3a8; color: #1b1511; } .hdr .btn--gold:hover { background: #f0e2c2; } .hdr__link:hover, .hdr__link[aria-current="page"] { color: #e6d3a8; } .hdr__link::after { background: #e6d3a8; }
